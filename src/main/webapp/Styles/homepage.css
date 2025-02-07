@@ -1,0 +1,90 @@
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            align-items: center;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background: white;
+            border: 2px solid black;
+            width: 100%;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+            color: red;
+            border: 2px solid red;
+            padding: 10px;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-links input {
+            padding: 10px;
+            border: 2px solid black;
+        }
+
+        .profile-btn {
+            border: 2px solid black;
+            padding: 10px 15px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 70px;
+            padding: 40px;
+            width: fit-content;
+            margin: 0 auto;
+        }
+
+        .box {
+            width: 200px;
+            height: 250px;
+            border: 2px solid orange;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            color: black;
+        }
+
+        .box:hover {
+            background-color: red;
+            color: white;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: white;
+            border-top: 2px solid black;
+            width: 100%;
+            margin-top: auto;
+        }

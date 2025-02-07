@@ -1,0 +1,19 @@
+# Ignore target folder (compiled files)
+target/
+*.log
+*.class
+*.war
+*.jar
+
+# Ignore IDE specific files
+.idea/
+.vscode/
+*.iml
+
+# Ignore Maven wrapper binaries
+.mvn/wrapper/maven-wrapper.jar
+!mvn/wrapper/maven-wrapper.properties
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f9fafb;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: white;
+    border: 2px solid black;
+    width: 100%;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: red;
+    border: 2px solid red;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-links input {
+    padding: 10px;
+    border: 2px solid black;
+}
+
+.profile-btn {
+    border: 2px solid black;
+    padding: 10px 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.main-container {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+    width: 100%;
+    flex-grow: 1;
+}
+
+.left-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1;
+}
+
+.box {
+    width: 250px;
+    height: 250px;
+    border: 3px solid orange;
+    padding: 10px;
+}
+
+.info {
+    width: 250px;
+    border: 2px solid black;
+    padding: 10px;
+}
+
+.movie-selection {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.movie-selection h1 {
+    font-size: 24px;
+    color: black;
+}
+
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+}
+
+.movie-box {
+    width: 200px;
+    height: 250px;
+    border: 2px solid orange;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+
+.movie-box:hover {
+    background-color: red;
+}
+
+footer {
+    margin-top: auto;
+    background: white;
+    border-top: 2px solid black;
+    text-align: center;
+    padding: 15px 0;
+}
