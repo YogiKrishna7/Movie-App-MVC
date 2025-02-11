@@ -11,8 +11,10 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name="movies")
 public class MovieEntity {
 
     @Id
@@ -20,10 +22,10 @@ public class MovieEntity {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(name = "title", nullable = false, length = 100)
+    @Column(name = "title", nullable = false)
     private String title;
 
-    @Column(name = "description", length = 500)
+    @Column(name = "description")
     private String description;
 
     @Column(name = "duration", nullable = false)
@@ -32,29 +34,41 @@ public class MovieEntity {
     @Column(name = "release_date", nullable = false)
     private String releaseDate;
 
-    @Column(name = "genre", length = 50)
+    @Column(name = "genre")
     private String genre;
 
     @Column(name = "is_active", nullable = false)
     private boolean isActive;
 
-    @Column(name = "created_at", nullable = false, updatable = false)
+    @Column(name = "created_at", nullable = false)
     private Date createdAt;
 
     @Column(name = "updated_at")
     private Date updatedAt;
 
-    @Column(name = "created_by", nullable = false, length = 50)
+    @Column(name = "created_by", nullable = false)
     private String createdBy;
 
-    @Column(name = "updated_by", length = 50)
+    @Column(name = "updated_by")
     private String updatedBy;
+    
+    
 
-    @OneToMany(mappedBy = "movie", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<ShowtimeEntity> showtimes;
-
-    @OneToMany(mappedBy = "movie", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<ReviewEntity> reviews;
+	public MovieEntity(Long id, String title, String description, int duration, String releaseDate, String genre,
+			boolean isActive, Date createdAt, Date updatedAt, String createdBy, String updatedBy) {
+		super();
+		this.id = id;
+		this.title = title;
+		this.description = description;
+		this.duration = duration;
+		this.releaseDate = releaseDate;
+		this.genre = genre;
+		this.isActive = isActive;
+		this.createdAt = createdAt;
+		this.updatedAt = updatedAt;
+		this.createdBy = createdBy;
+		this.updatedBy = updatedBy;
+	}
 
 	public Long getId() {
 		return id;
@@ -142,23 +156,5 @@ public class MovieEntity {
 
 	public void setUpdatedBy(String updatedBy) {
 		this.updatedBy = updatedBy;
-	}
-
-	public List<ShowtimeEntity> getShowtimes() {
-		return showtimes;
-	}
-
-	public void setShowtimes(List<ShowtimeEntity> showtimes) {
-		this.showtimes = showtimes;
-	}
-
-	public List<ReviewEntity> getReviews() {
-		return reviews;
-	}
-
-	public void setReviews(List<ReviewEntity> reviews) {
-		this.reviews = reviews;
-	}
-
-    
+	}  
 }

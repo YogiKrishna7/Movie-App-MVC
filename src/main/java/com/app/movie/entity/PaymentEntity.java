@@ -9,8 +9,10 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name="payments")
 public class PaymentEntity {
 
     @Id
@@ -22,25 +24,25 @@ public class PaymentEntity {
     @JoinColumn(name = "booking_id", nullable = false)
     private BookingEntity booking;
 
-    @Column(name = "payment_method", nullable = false, length = 50)
+    @Column(name = "payment_method", nullable = false)
     private String paymentMethod;
 
     @Column(name = "amount", nullable = false)
     private double amount;
 
-    @Column(name = "status", nullable = false, length = 20)
+    @Column(name = "status", nullable = false)
     private String status;
 
-    @Column(name = "created_at", nullable = false, updatable = false)
+    @Column(name = "created_at", nullable = false)
     private Date createdAt;
 
     @Column(name = "updated_at")
     private Date updatedAt;
 
-    @Column(name = "created_by", nullable = false, length = 50)
+    @Column(name = "created_by", nullable = false)
     private String createdBy;
 
-    @Column(name = "updated_by", length = 50)
+    @Column(name = "updated_by")
     private String updatedBy;
 
 	public Long getId() {

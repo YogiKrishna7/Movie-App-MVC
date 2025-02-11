@@ -7,8 +7,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name="admins")
 public class AdminEntity {
 
     @Id
@@ -16,28 +18,28 @@ public class AdminEntity {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(name = "username", nullable = false, unique = true, length = 50)
+    @Column(name = "username", nullable = false, unique = true)
     private String username;
 
-    @Column(name = "password", nullable = false, length = 100)
+    @Column(name = "password", nullable = false)
     private String password;
 
-    @Column(name = "email", nullable = false, unique = true, length = 100)
+    @Column(name = "email", nullable = false, unique = true)
     private String email;
 
-    @Column(name = "role", nullable = false, length = 20)
+    @Column(name = "role", nullable = false)
     private String role;
 
     @Column(name = "is_active", nullable = false)
     private boolean isActive;
 
-    @Column(name = "created_at", nullable = false, updatable = false)
+    @Column(name = "created_at", nullable = false)
     private Date createdAt;
 
     @Column(name = "updated_at")
     private Date updatedAt;
 
-    @Column(name = "created_by", nullable = false, length = 50)
+    @Column(name = "created_by", nullable = false)
     private String createdBy;
 
     @Column(name = "updated_by", length = 50)

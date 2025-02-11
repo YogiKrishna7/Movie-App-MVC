@@ -9,8 +9,10 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name="seats")
 public class SeatEntity {
 
     @Id
@@ -22,22 +24,22 @@ public class SeatEntity {
     @JoinColumn(name = "showtime_id", nullable = false)
     private ShowtimeEntity showtime;
 
-    @Column(name = "seat_number", nullable = false, length = 10)
+    @Column(name = "seat_number", nullable = false)
     private String seatNumber;
 
     @Column(name = "is_booked", nullable = false)
     private boolean isBooked;
 
-    @Column(name = "created_at", nullable = false, updatable = false)
+    @Column(name = "created_at", nullable = false)
     private Date createdAt;
 
     @Column(name = "updated_at")
     private Date updatedAt;
 
-    @Column(name = "created_by", nullable = false, length = 50)
+    @Column(name = "created_by", nullable = false)
     private String createdBy;
 
-    @Column(name = "updated_by", length = 50)
+    @Column(name = "updated_by")
     private String updatedBy;
 
 	public Long getId() {

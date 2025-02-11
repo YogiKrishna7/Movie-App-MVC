@@ -9,8 +9,10 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name="reviews")
 public class ReviewEntity {
 
     @Id
@@ -29,19 +31,19 @@ public class ReviewEntity {
     @Column(name = "rating", nullable = false)
     private int rating;
 
-    @Column(name = "comment", length = 500)
+    @Column(name = "comment")
     private String comment;
 
-    @Column(name = "review_date", nullable = false)
+    @Column(name = "review_date")
     private Date reviewDate;
 
-    @Column(name = "created_at", nullable = false, updatable = false)
+    @Column(name = "created_at", nullable = false)
     private Date createdAt;
 
     @Column(name = "updated_at")
     private Date updatedAt;
 
-    @Column(name = "created_by", nullable = false, length = 50)
+    @Column(name = "created_by", nullable = false)
     private String createdBy;
 
     @Column(name = "updated_by", length = 50)

@@ -14,8 +14,10 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name="showtimes")
 public class ShowtimeEntity {
 
     @Id
@@ -43,23 +45,17 @@ public class ShowtimeEntity {
     @Column(name = "is_active", nullable = false)
     private boolean isActive;
 
-    @Column(name = "created_at", nullable = false, updatable = false)
+    @Column(name = "created_at", nullable = false)
     private Date createdAt;
 
     @Column(name = "updated_at")
     private Date updatedAt;
 
-    @Column(name = "created_by", nullable = false, length = 50)
+    @Column(name = "created_by", nullable = false)
     private String createdBy;
 
-    @Column(name = "updated_by", length = 50)
+    @Column(name = "updated_by")
     private String updatedBy;
-
-    @OneToMany(mappedBy = "showtime", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<SeatEntity> seats;
-
-    @OneToMany(mappedBy = "showtime", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<BookingEntity> bookings;
 
 	public Long getId() {
 		return id;
@@ -147,23 +143,5 @@ public class ShowtimeEntity {
 
 	public void setUpdatedBy(String updatedBy) {
 		this.updatedBy = updatedBy;
-	}
-
-	public List<SeatEntity> getSeats() {
-		return seats;
-	}
-
-	public void setSeats(List<SeatEntity> seats) {
-		this.seats = seats;
-	}
-
-	public List<BookingEntity> getBookings() {
-		return bookings;
-	}
-
-	public void setBookings(List<BookingEntity> bookings) {
-		this.bookings = bookings;
-	}
-
-    
+	} 
 }

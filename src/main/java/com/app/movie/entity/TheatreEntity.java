@@ -9,8 +9,10 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name="theatres")
 public class TheatreEntity {
 
     @Id
@@ -18,10 +20,10 @@ public class TheatreEntity {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(name = "name", nullable = false, length = 100)
+    @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name = "location", nullable = false, length = 200)
+    @Column(name = "location", nullable = false)
     private String location;
 
     @Column(name = "capacity", nullable = false)
@@ -30,20 +32,17 @@ public class TheatreEntity {
     @Column(name = "is_active", nullable = false)
     private boolean isActive;
 
-    @Column(name = "created_at", nullable = false, updatable = false)
+    @Column(name = "created_at", nullable = false)
     private Date createdAt;
 
     @Column(name = "updated_at")
     private Date updatedAt;
 
-    @Column(name = "created_by", nullable = false, length = 50)
+    @Column(name = "created_by", nullable = false)
     private String createdBy;
 
-    @Column(name = "updated_by", length = 50)
+    @Column(name = "updated_by")
     private String updatedBy;
-
-    @OneToMany(mappedBy = "theatre", cascade = CascadeType.ALL)
-    private List<ShowtimeEntity> showtimes;
 
 	public Long getId() {
 		return id;
@@ -116,14 +115,4 @@ public class TheatreEntity {
 	public void setUpdatedBy(String updatedBy) {
 		this.updatedBy = updatedBy;
 	}
-
-	public List<ShowtimeEntity> getShowtimes() {
-		return showtimes;
-	}
-
-	public void setShowtimes(List<ShowtimeEntity> showtimes) {
-		this.showtimes = showtimes;
-	}
-
-    
 }

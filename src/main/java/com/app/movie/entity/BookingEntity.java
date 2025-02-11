@@ -13,8 +13,10 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name="bookings")
 public class BookingEntity {
 
     @Id
@@ -36,20 +38,17 @@ public class BookingEntity {
     @Column(name = "total_price", nullable = false)
     private double totalPrice;
 
-    @Column(name = "created_at", nullable = false, updatable = false)
+    @Column(name = "created_at", nullable = false)
     private Date createdAt;
 
     @Column(name = "updated_at")
     private Date updatedAt;
 
-    @Column(name = "created_by", nullable = false, length = 50)
+    @Column(name = "created_by", nullable = false)
     private String createdBy;
 
-    @Column(name = "updated_by", length = 50)
+    @Column(name = "updated_by")
     private String updatedBy;
-
-    @OneToOne(mappedBy = "booking", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private PaymentEntity payment;
 
 	public Long getId() {
 		return id;
@@ -121,15 +120,5 @@ public class BookingEntity {
 
 	public void setUpdatedBy(String updatedBy) {
 		this.updatedBy = updatedBy;
-	}
-
-	public PaymentEntity getPayment() {
-		return payment;
-	}
-
-	public void setPayment(PaymentEntity payment) {
-		this.payment = payment;
-	}
-
-    
+	}    
 }
