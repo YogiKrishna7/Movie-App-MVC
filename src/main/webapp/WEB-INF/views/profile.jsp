@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile Page</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}Styles/profile.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/profile.css">
 </head>
 
 <body>
     <header>
-        <a href="#" class="logo">Logo</a>
+        <a href="${pageContext.request.contextPath}/movieapp/dashboard" class="logo">Logo</a>
         <div class="auth-buttons">
         </div>
     </header>

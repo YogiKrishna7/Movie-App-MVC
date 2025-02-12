@@ -17,9 +17,7 @@ import jakarta.servlet.http.HttpServletResponse;
 @RequestMapping("/movieapp")
 public class LoginController {
     
-	@Autowired
-	AuthService authService;
-
+	private AuthService authService;
     public LoginController(AuthService authService) {
         this.authService = authService;
     }
@@ -37,7 +35,7 @@ public class LoginController {
         if (isAuthenticated) {
             response.sendRedirect("/movieapp/dashboard");
         } else {
-        	response.sendRedirect("/movieapp/login?username_or_password_incorrect");
+        	response.sendRedirect("/movie/login?username_or_password_incorrect");
         }
     }
 }

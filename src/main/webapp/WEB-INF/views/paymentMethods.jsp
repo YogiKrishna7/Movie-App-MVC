@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Payment Methods</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}Styles/paymentMethods.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/paymentMethods.css">
 </head>
 
 <body>
     <header>
-        <a href="#" class="logo">Logo</a>
+        <a href="${pageContext.request.contextPath}/movieapp/dashboard" class="logo">Logo</a>
     </header>
 
     <main>

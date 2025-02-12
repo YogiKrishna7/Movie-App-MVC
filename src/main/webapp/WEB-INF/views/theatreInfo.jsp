@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie Booking - Seat Selection</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}Styles/theatreInfo.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/theatreInfo.css">
 </head>
 <body>
     <header>
-        <a href="#" class="logo">Logo</a>
+        <a href="${pageContext.request.contextPath}/movieapp/dashboard" class="logo">Logo</a>
         <div class="nav-links">
             <input type="text" placeholder="Search Movie">
             <input type="text" placeholder="Search Theatre">

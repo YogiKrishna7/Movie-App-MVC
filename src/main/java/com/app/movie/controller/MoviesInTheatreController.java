@@ -6,11 +6,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/movieapp")
-public class OrderSummaryController {
-
-	@GetMapping("/order-summary")
-	public String viewOrderSummary() {
-		return "orderSummary";
-	}
+public class MoviesInTheatreController {
 	
+	@GetMapping("view-theatre")
+	public String moviesInTheatre() {
+		return "moviesInTheatre";
+	}
 }

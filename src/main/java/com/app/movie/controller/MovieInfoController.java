@@ -11,16 +11,17 @@ import com.app.movie.service.MovieService;
 
 @Controller
 @RequestMapping("/movieapp")
-public class DashboardController {
-	
-	private MovieService movieService;
-    public DashboardController(MovieService movieService) {
+public class MovieInfoController {
+
+    private MovieService movieService;
+    public MovieInfoController(MovieService movieService) {
         this.movieService = movieService;
     }
-    
-    @GetMapping("/dashboard")
-    public String dashboard(Model model) {
-        model.addAttribute("movieList", movieService.getAllMovies());
-        return "homepage";
+
+    @GetMapping("/movie-info")
+    public String movieInfo(@RequestParam("movieId") int movieId, Model model) {
+        MovieEntity selectedMovie = movieService.getMovieById(movieId);
+        model.addAttribute("selectedMovieObj", selectedMovie);
+        return "movieInfo";
     }
 }

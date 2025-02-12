@@ -11,12 +11,12 @@
 </head>
 <body>
     <header>
-        <a href="#" class="logo">Logo</a>
+        <a href="${pageContext.request.contextPath}/movieapp/dashboard" class="logo">Logo</a>
         <div class="nav-links">
             <input type="text" placeholder="Search Movie">
             <input type="text" placeholder="Search Theatre">
         </div>
-        <button class="profile-btn">Profile</button>
+        <button class="profile-btn" onclick="GoToProfile()">Profile</button>
     </header>
     <div class="content">
         <%
@@ -47,6 +47,10 @@
     <script>
         function GoToMovieInfo(movieId) {
             window.location.href = '/movieapp/movie-info?movieId=' + movieId;
+        }
+        
+        function GoToProfile() {
+            window.location.href = '/movieapp/profile';
         }
     </script>
 
