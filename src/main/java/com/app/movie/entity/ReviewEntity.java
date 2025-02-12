@@ -18,7 +18,7 @@ public class ReviewEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
-    private Long id;
+    private int id;
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
@@ -49,11 +49,11 @@ public class ReviewEntity {
     @Column(name = "updated_by", length = 50)
     private String updatedBy;
 
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 

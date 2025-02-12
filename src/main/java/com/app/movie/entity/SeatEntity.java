@@ -18,7 +18,7 @@ public class SeatEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
-    private Long id;
+    private int id;
 
     @ManyToOne
     @JoinColumn(name = "showtime_id", nullable = false)
@@ -42,11 +42,11 @@ public class SeatEntity {
     @Column(name = "updated_by")
     private String updatedBy;
 
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 

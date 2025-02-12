@@ -19,7 +19,7 @@ public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
-    private Long id;
+    private int id;
 
     @Column(name = "username", nullable = false, unique = true)
     private String username;
@@ -51,11 +51,11 @@ public class UserEntity {
     @Column(name = "updated_by")
     private String updatedBy;
 
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 

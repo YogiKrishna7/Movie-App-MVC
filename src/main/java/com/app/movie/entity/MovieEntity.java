@@ -20,7 +20,10 @@ public class MovieEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
-    private Long id;
+    private int id;
+    
+    @Column(name="url", nullable = false)
+    private String MovieUrl;
 
     @Column(name = "title", nullable = false)
     private String title;
@@ -51,13 +54,12 @@ public class MovieEntity {
 
     @Column(name = "updated_by")
     private String updatedBy;
-    
-    
 
-	public MovieEntity(Long id, String title, String description, int duration, String releaseDate, String genre,
-			boolean isActive, Date createdAt, Date updatedAt, String createdBy, String updatedBy) {
+	public MovieEntity(int id, String movieUrl, String title, String description, int duration, String releaseDate,
+			String genre, boolean isActive, Date createdAt, Date updatedAt, String createdBy, String updatedBy) {
 		super();
 		this.id = id;
+		MovieUrl = movieUrl;
 		this.title = title;
 		this.description = description;
 		this.duration = duration;
@@ -70,12 +72,20 @@ public class MovieEntity {
 		this.updatedBy = updatedBy;
 	}
 
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
+	}
+
+	public String getMovieUrl() {
+		return MovieUrl;
+	}
+
+	public void setMovieUrl(String movieUrl) {
+		MovieUrl = movieUrl;
 	}
 
 	public String getTitle() {
@@ -156,5 +166,7 @@ public class MovieEntity {
 
 	public void setUpdatedBy(String updatedBy) {
 		this.updatedBy = updatedBy;
-	}  
+	}
+    
+    
 }
