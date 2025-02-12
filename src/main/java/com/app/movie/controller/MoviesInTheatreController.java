@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/movieapp")
 public class MoviesInTheatreController {
 	
-	@GetMapping("view-theatre")
+	@GetMapping("/view-theatre")
 	public String moviesInTheatre() {
 		return "moviesInTheatre";
 	}

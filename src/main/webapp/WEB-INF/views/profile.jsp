@@ -22,8 +22,8 @@
             <h4>Phone Number: </h4>
             <h4>Email: </h4>
 
-            <button>Bookings</button>
-            <button>Payment Methods</button>
+            <button onclick="GotoBookingHistory()">Bookings</button>
+            <button onclick="GotoPaymentMehtods()">Payment Methods</button>
         </section>
 
         <div id="action-buttons">
@@ -37,5 +37,13 @@
         <p>&copy; 2024 My Movie Booker</p>
     </footer>
 </body>
+<script type="text/javascript">
+function GotoBookingHistory(){
+	window.location.href="/movieapp/booking-history";
+}
 
+function GotoPaymentMehtods(){
+	window.location.href="/movieapp/payment-methods";
+}
+</script>
 </html>

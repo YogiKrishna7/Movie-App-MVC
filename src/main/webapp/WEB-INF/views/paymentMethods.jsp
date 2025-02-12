@@ -20,7 +20,7 @@
             <br>
             <button>Add Payment Method</button>
             <button>Remove Payment Method</button>
-            <button>Back</button>
+            <button onclick="GotoProfile()">Back</button>
         </section>
     </main>
 
@@ -28,5 +28,9 @@
         <p>&copy; My Movie Booker</p>
     </footer>
 </body>
-
+<script type="text/javascript">
+function GotoProfile(){
+	window.location.href="/movieapp/profile"
+}
+</script>
 </html>

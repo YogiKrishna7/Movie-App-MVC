@@ -17,12 +17,16 @@
             <h1>Booking history:</h1>
             <br>
             <br>
-            <button>Back</button>
+            <button onclick="GotoProfile()">Back</button>
         </section>
     </main>
     <footer>
         <p>&copy; My Movie Booker</p>
     </footer>
 </body>
-
+<script type="text/javascript">
+function GotoProfile(){
+	window.location.href="/movieapp/profile"
+}
+</script>
 </html>

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/movieapp")
 public class SeatSelectionController {
 
-	@GetMapping("seat-selection")
+	@GetMapping("/seat-selection")
 	public String viewSeats() {
 		return "seatSelection";
 	}

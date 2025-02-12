@@ -13,7 +13,7 @@
             <input type="text" placeholder="Search Movie">
             <input type="text" placeholder="Search Theatre">
         </div>
-        <button class="profile-btn">Profile</button>
+        <button class="profile-btn" onclick="GotoProfile()">Profile</button>
     </header>
 
     <main class="main-container">
@@ -28,12 +28,25 @@
     </main>
 
     <div class="buttons-container">
-        <button class="button">Confirm</button>
-        <button class="button">Cancel</button>
+        <button class="button" onclick="GotoPayments()">Confirm</button>
+        <button class="button" onclick="GotoSeatSelection()">Cancel</button>
     </div>
 
     <footer>
         <p>&copy; 2024 My Movie Booker</p>
     </footer>
 </body>
+<script type="text/javascript">
+function GotoPayments(){
+	window.location.href="/movieapp/payments";
+}
+
+function GotoSeatSelection(){
+	window.location.href="/movieapp/seat-selection";
+}
+
+function GotoProfile(){
+	window.location.href="/movieapp/profile"
+}
+</script>
 </html>

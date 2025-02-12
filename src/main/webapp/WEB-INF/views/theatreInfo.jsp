@@ -13,7 +13,7 @@
             <input type="text" placeholder="Search Movie">
             <input type="text" placeholder="Search Theatre">
         </div>
-        <button class="profile-btn">Profile</button>
+        <button class="profile-btn" onclick="GotoProfile()">Profile</button>
     </header>
 
     <main class="main-container">
@@ -37,7 +37,8 @@
             </div>
         </div>
         <div class="button-container">
-            <button class="button">Continue</button>
+            <button class="button" onclick="GotoSeatSelection()">Continue</button>
+            <button class="button" onclick="GotoMovieInfo()">Cancel</button>
         </div>
     </main>
 
@@ -45,4 +46,17 @@
         <p>&copy; 2024 My Movie Booker</p>
     </footer>
 </body>
+<script type="text/javascript">
+function GotoSeatSelection(){
+	window.location.href="/movieapp/seat-selection";
+}
+
+function GotoMovieInfo(){
+	window.location.href="/movieapp/movie-info?movieId=1";
+}
+
+function GotoProfile(){
+	window.location.href="/movieapp/profile"
+}
+</script>
 </html>

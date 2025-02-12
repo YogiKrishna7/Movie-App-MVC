@@ -15,17 +15,25 @@
             <input type="text" placeholder="Search Movie">
             <input type="text" placeholder="Search Theatre">
         </div>
-        <button class="profile-btn">Profile</button>
+        <button class="profile-btn" onclick="GotoProfile()">Profile</button>
     </header>
 
     <main>
         <h2 class="thank-you-message">Thank You for Your Booking!</h2>
-        <button class="home-button">Go to Home</button>
+        <button class="home-button" onclick="GotoHome()">Go to Home</button>
     </main>
 
     <footer>
         <p>&copy; 2024 My Movie Booker</p>
     </footer>
 </body>
+<script type="text/javascript">
+function GotoHome(){
+	window.location.href = '/movieapp/dashboard';
+}
 
+function GotoProfile(){
+	window.location.href="/movieapp/profile"
+}
+</script>
 </html>
