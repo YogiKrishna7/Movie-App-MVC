@@ -29,7 +29,7 @@
         <div id="action-buttons">
             <button>Edit</button>
             <button>Delete Account</button>
-            <button>Logout</button>
+            <button onclick="GotoLogin()">Logout</button>
         </div>
     </main>
 
@@ -44,6 +44,10 @@ function GotoBookingHistory(){
 
 function GotoPaymentMehtods(){
 	window.location.href="/movieapp/payment-methods";
+}
+
+function GotoLogin(){
+	window.location.href="/movieapp/login";
 }
 </script>
 </html>
