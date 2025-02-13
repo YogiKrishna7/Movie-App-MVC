@@ -19,11 +19,11 @@
     </header>
     <main class="main-container">
         <div class="left-section">
-            <img src="${selectedMovieObj.movieUrl}" alt="${selectedMovieObj.title}" style="width: 250px; height: 350px; object-fit: cover; border: 2px solid black; border-radius: 10px;">
-            <h2>${selectedMovieObj.title}</h2>
-            <p>Release Date: ${selectedMovieObj.releaseDate}</p>
-            <p>Duration: ${selectedMovieObj.duration} minutes</p>
-            <p>Genre: ${selectedMovieObj.genre}</p>
+            <img src="${selectedMovie.movieUrl}" alt="${selectedMovie.title}" style="width: 250px; height: 350px; object-fit: cover; border: 2px solid black; border-radius: 10px;">
+            <h2>${selectedMovie.title}</h2>
+            <p>Release Date: ${selectedMovie.releaseDate}</p>
+            <p>Duration: ${selectedMovie.duration} minutes</p>
+            <p>Genre: ${selectedMovie.genre}</p>
         </div>
         <div class="theatre-selection">
             <h1>Select Theatre:</h1>

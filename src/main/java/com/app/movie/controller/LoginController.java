@@ -28,14 +28,22 @@ public class LoginController {
     }
     
     @PostMapping("/auth")
-    public void login(@RequestParam("phone") String phone, @RequestParam("password") String password, HttpServletResponse response) throws IOException {
+    public void login(@RequestParam("phone") String phone, @RequestParam("password") String password, HttpServletResponse response){
     	
         boolean isAuthenticated = authService.authenticate(phone, password);
 
         if (isAuthenticated) {
-            response.sendRedirect("/movieapp/dashboard");
+            try {
+				response.sendRedirect("/movieapp/dashboard");
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
         } else {
-        	response.sendRedirect("/movie/login?username_or_password_incorrect");
+        	try {
+				response.sendRedirect("/movie/login?username_or_password_incorrect");
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
         }
     }
 }

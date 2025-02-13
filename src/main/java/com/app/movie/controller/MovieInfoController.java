@@ -21,7 +21,7 @@ public class MovieInfoController {
     @GetMapping("/movie-info")
     public String movieInfo(@RequestParam("movieId") int movieId, Model model) {
         MovieEntity selectedMovie = movieService.getMovieById(movieId);
-        model.addAttribute("selectedMovieObj", selectedMovie);
+        model.addAttribute("selectedMovie", selectedMovie);
         return "movieInfo";
     }
 }

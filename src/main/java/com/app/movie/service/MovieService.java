@@ -13,7 +13,6 @@ public class MovieService {
     private List<MovieEntity> movieList = new ArrayList<>();
 
     public MovieService() {
-        // Populate the list with MovieEntity objects
         movieList.add(new MovieEntity(
                 1,
                 "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcS2uZIj7-mLfVp1TYvfTEPBMGL5fCn8Hm40LEKFPPE6BHVIPA7fDyUM9e5zXKvyWdUyqzXOEg",
