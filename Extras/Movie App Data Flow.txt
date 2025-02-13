@@ -41,7 +41,7 @@ User selects a movie ->
 
 HTTP GET to /movies with movieId ->
 
-MovieController handles request ->
+MovieInfoController handles request ->
 
 Fetch movie details ->
 
@@ -71,7 +71,7 @@ Order Summary Flow:
 
 User views order summary ->
 
-HTTP GET to /order/summary ->
+HTTP GET to /order's method ->
 
 OrderSummaryController handles request ->
 
@@ -87,7 +87,7 @@ Payment Flow:
 
 User proceeds to payment by clicking continue ->
 
-HTTP GET to /payment ->
+HTTP GET to /payment's method->
 
 PaymentController handles request ->
 
@@ -111,7 +111,7 @@ Profile Flow:
 
 User views profile ->
 
-HTTP GET to /profile ->
+HTTP GET to /profile's method ->
 
 ProfileController handles request ->
 

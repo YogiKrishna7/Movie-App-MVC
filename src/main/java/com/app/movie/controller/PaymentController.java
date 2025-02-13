@@ -5,10 +5,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/movieapp")
 public class PaymentController {
 
-	@GetMapping("/payments")
+	@GetMapping("/movieapp/payments")
 	public String viewPayments() {
 		return "payments";
 	}
