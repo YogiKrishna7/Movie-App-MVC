@@ -17,39 +17,46 @@ public class TheatreEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
-    private int id;
+    @Column(name = "theatre_id")
+    private int theatreId;
 
-    @Column(name = "name", nullable = false)
+    @Column(name = "name")
     private String name;
 
-    @Column(name = "location", nullable = false)
+    @Column(name = "location")
     private String location;
 
-    @Column(name = "capacity", nullable = false)
+    @Column(name = "capacity")
     private int capacity;
 
-    @Column(name = "is_active", nullable = false)
-    private boolean isActive;
+    @Column(name = "is_active")
+    private String isActive;
 
-    @Column(name = "created_at", nullable = false)
+    @Column(name = "created_at")
     private Date createdAt;
 
     @Column(name = "updated_at")
     private Date updatedAt;
 
-    @Column(name = "created_by", nullable = false)
+    @Column(name = "created_by")
     private String createdBy;
 
     @Column(name = "updated_by")
     private String updatedBy;
 
+    
+    
+	public TheatreEntity() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	public int getId() {
-		return id;
+		return theatreId;
 	}
 
 	public void setId(int id) {
-		this.id = id;
+		this.theatreId = id;
 	}
 
 	public String getName() {
@@ -76,11 +83,11 @@ public class TheatreEntity {
 		this.capacity = capacity;
 	}
 
-	public boolean isActive() {
+	public String isActive() {
 		return isActive;
 	}
 
-	public void setActive(boolean isActive) {
+	public void setActive(String isActive) {
 		this.isActive = isActive;
 	}
 

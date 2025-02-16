@@ -1,26 +1,30 @@
 package com.app.movie.controller;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.app.movie.entity.MovieEntity;
 import com.app.movie.service.MovieService;
 
 @Controller
 @RequestMapping("/movieapp")
-public class DashboardController {
+public class HomepageController {
 	
-	private MovieService movieService;
-    public DashboardController(MovieService movieService) {
-        this.movieService = movieService;
-    }
+	@Autowired
+    private MovieService movieService;
     
-    @GetMapping("/dashboard")
-    public String dashboard(Model model) {
-        model.addAttribute("movieList", movieService.getAllMovies());
+    @GetMapping("/home")
+    public String home(Model model) {
+    	    
+    	List<MovieEntity> movieList = movieService.getMovies();
+        
+    	model.addAttribute("movieList", movieList);
+    	
         return "homepage";
     }
 }

@@ -21,41 +21,48 @@ public class BookingEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
-    private int id;
+    @Column(name = "booking_id")
+    private int bookingId;
 
     @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
+    @JoinColumn(name = "user_id")
     private UserEntity user;
 
     @ManyToOne
-    @JoinColumn(name = "showtime_id", nullable = false)
+    @JoinColumn(name = "showtime_id")
     private ShowtimeEntity showtime;
 
-    @Column(name = "booking_date", nullable = false)
+    @Column(name = "booking_date")
     private Date bookingDate;
 
-    @Column(name = "total_price", nullable = false)
+    @Column(name = "total_price")
     private double totalPrice;
 
-    @Column(name = "created_at", nullable = false)
+    @Column(name = "created_at")
     private Date createdAt;
 
     @Column(name = "updated_at")
     private Date updatedAt;
 
-    @Column(name = "created_by", nullable = false)
+    @Column(name = "created_by")
     private String createdBy;
 
     @Column(name = "updated_by")
     private String updatedBy;
+    
+    
+
+	public BookingEntity() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	public int getId() {
-		return id;
+		return bookingId;
 	}
 
 	public void setId(int id) {
-		this.id = id;
+		this.bookingId = id;
 	}
 
 	public UserEntity getUser() {

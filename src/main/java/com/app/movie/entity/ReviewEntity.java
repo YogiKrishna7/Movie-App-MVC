@@ -17,18 +17,18 @@ public class ReviewEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
-    private int id;
+    @Column(name = "review_id")
+    private int reviewId;
 
     @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
+    @JoinColumn(name = "user_id")
     private UserEntity user;
 
     @ManyToOne
-    @JoinColumn(name = "movie_id", nullable = false)
+    @JoinColumn(name = "movie_id")
     private MovieEntity movie;
 
-    @Column(name = "rating", nullable = false)
+    @Column(name = "rating")
     private int rating;
 
     @Column(name = "comment")
@@ -37,24 +37,31 @@ public class ReviewEntity {
     @Column(name = "review_date")
     private Date reviewDate;
 
-    @Column(name = "created_at", nullable = false)
+    @Column(name = "created_at")
     private Date createdAt;
 
     @Column(name = "updated_at")
     private Date updatedAt;
 
-    @Column(name = "created_by", nullable = false)
+    @Column(name = "created_by")
     private String createdBy;
 
-    @Column(name = "updated_by", length = 50)
+    @Column(name = "updated_by")
     private String updatedBy;
+    
+    
+
+	public ReviewEntity() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	public int getId() {
-		return id;
+		return reviewId;
 	}
 
 	public void setId(int id) {
-		this.id = id;
+		this.reviewId = id;
 	}
 
 	public UserEntity getUser() {

@@ -11,7 +11,7 @@
 </head>
 <body>
     <header>
-        <a href="${pageContext.request.contextPath}/movieapp/dashboard" class="logo">Logo</a>
+        <a href="${pageContext.request.contextPath}/movieapp/home" class="logo">Logo</a>
         <div class="nav-links">
             <input type="text" placeholder="Search Movie">
             <input type="text" placeholder="Search Theatre">
@@ -43,15 +43,13 @@
         <p>&copy; 2024 My Movie Booker</p>
     </footer>
 </body>
+<script>
+    function GoToMovieInfo(movieId) {
+        window.location.href = '/movieapp/movie-info?movieId=' + movieId;
+    }
 
-    <script>
-        function GoToMovieInfo(movieId) {
-            window.location.href = '/movieapp/movie-info?movieId=' + movieId;
-        }
-        
-        function GoToProfile() {
-            window.location.href = '/movieapp/profile';
-        }
-    </script>
-
+    function GoToProfile() {
+        window.location.href = '/movieapp/profile';
+    }
+</script>
 </html>

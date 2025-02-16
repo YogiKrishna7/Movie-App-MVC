@@ -1,17 +1,21 @@
 package com.app.movie.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.app.movie.entity.UserEntity;
+import com.app.movie.repo.UserRepo;
 
 @Service
 public class AuthService {
-	public boolean authenticate(String phone, String password) {
-        String storedPhone = "1234567890";
-        String storedPassword = "123";
-
-        if (storedPhone.equals(phone) && storedPassword.equals(password)) {
-            return true;
-        } else {
-            return false;
-        }
-    }
+	
+	@Autowired
+	private UserRepo us;
+	
+	public UserEntity authenticate(String phone, String password) {
+		
+		UserEntity currentUser = us.findByPhoneNumberAndPassword(phone, password);
+		
+		return currentUser;
+	}
 }

@@ -1,5 +1,6 @@
 package com.app.movie.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,15 +14,16 @@ import com.app.movie.service.MovieService;
 @RequestMapping("/movieapp")
 public class MovieInfoController {
 
-    private MovieService movieService;
-    public MovieInfoController(MovieService movieService) {
-        this.movieService = movieService;
-    }
-
-    @GetMapping("/movie-info")
-    public String movieInfo(@RequestParam("movieId") int movieId, Model model) {
-        MovieEntity selectedMovie = movieService.getMovieById(movieId);
-        model.addAttribute("selectedMovie", selectedMovie);
-        return "movieInfo";
-    }
+	@Autowired
+	private MovieService ms;
+	
+	@GetMapping("/movie-info")
+	public String showMovieInfo(@RequestParam("movieId") int movieId, Model model) {
+		
+		MovieEntity movieInfo = ms.getMovieById(movieId);
+		
+		model.addAttribute("selectedMovie", movieInfo);
+		
+		return "movieInfo";
+	}
 }

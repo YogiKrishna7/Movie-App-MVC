@@ -1,3 +1,4 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,26 +11,26 @@
 
 <body>
     <header>
-        <a href="${pageContext.request.contextPath}/movieapp/dashboard" class="logo">Logo</a>
-        <div class="auth-buttons">
-        </div>
+        <a href="${pageContext.request.contextPath}/movieapp/home" class="logo">Logo</a>
+        <div class="auth-buttons"></div>
     </header>
 
     <main>
         <section id="profile-area">
             <h1>User Profile</h1>
-            <h4>Name: </h4>
-            <h4>Phone Number: </h4>
-            <h4>Email: </h4>
+            <h4>Name: ${currentUser.getUsername()}</h4>
+            <h4>Phone Number: ${currentUser.getPhoneNumber()}</h4>
+            <h4>Email: ${currentUser.getEmail()}</h4>
 
             <button onclick="GotoBookingHistory()">Bookings</button>
-            <button onclick="GotoPaymentMehtods()">Payment Methods</button>
+            <button onclick="GotoPaymentMethods()">Payment Methods</button>
         </section>
 
         <div id="action-buttons">
             <button>Edit</button>
             <button>Delete Account</button>
             <button onclick="GotoLogin()">Logout</button>
+            <button onclick="GotoHome()">Back</button>
         </div>
     </main>
 
@@ -37,17 +38,23 @@
         <p>&copy; 2024 My Movie Booker</p>
     </footer>
 </body>
-<script type="text/javascript">
+
+<script>
 function GotoBookingHistory(){
-	window.location.href="/movieapp/booking-history";
+    window.location.href="/movieapp/booking-history";
 }
 
-function GotoPaymentMehtods(){
-	window.location.href="/movieapp/payment-methods";
+function GotoPaymentMethods(){
+    window.location.href="/movieapp/payment-methods";
 }
 
 function GotoLogin(){
-	window.location.href="/movieapp/login";
+    window.location.href="/movieapp/login";
+}
+
+function GotoHome(){
+	window.location.href = '/movieapp/home';
 }
 </script>
+
 </html>

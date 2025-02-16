@@ -37,7 +37,7 @@
     </footer>
 </body>
 
-<script type="text/javascript">
+<script>
 function GotoLogin(){
 	window.location.href = '/movieapp/login';
 }

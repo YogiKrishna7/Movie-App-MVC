@@ -17,40 +17,47 @@ public class PaymentEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
-    private int id;
+    @Column(name = "payment_id")
+    private int paymentId;
 
     @OneToOne
-    @JoinColumn(name = "booking_id", nullable = false)
+    @JoinColumn(name = "booking_id")
     private BookingEntity booking;
 
-    @Column(name = "payment_method", nullable = false)
+    @Column(name = "payment_method")
     private String paymentMethod;
 
-    @Column(name = "amount", nullable = false)
+    @Column(name = "amount")
     private double amount;
 
-    @Column(name = "status", nullable = false)
+    @Column(name = "status")
     private String status;
 
-    @Column(name = "created_at", nullable = false)
+    @Column(name = "created_at")
     private Date createdAt;
 
     @Column(name = "updated_at")
     private Date updatedAt;
 
-    @Column(name = "created_by", nullable = false)
+    @Column(name = "created_by")
     private String createdBy;
 
     @Column(name = "updated_by")
     private String updatedBy;
+    
+    
+
+	public PaymentEntity() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	public int getId() {
-		return id;
+		return paymentId;
 	}
 
 	public void setId(int id) {
-		this.id = id;
+		this.paymentId = id;
 	}
 
 	public BookingEntity getBooking() {

@@ -22,47 +22,54 @@ public class ShowtimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
-    private int id;
+    @Column(name = "showtime_id")
+    private int showTimeId;
 
     @ManyToOne
-    @JoinColumn(name = "movie_id", nullable = false)
+    @JoinColumn(name = "movie_id")
     private MovieEntity movie;
 
     @ManyToOne
-    @JoinColumn(name = "theatre_id", nullable = false)
+    @JoinColumn(name = "theatre_id")
     private TheatreEntity theatre;
 
-    @Column(name = "start_time", nullable = false)
+    @Column(name = "start_time")
     private Date startTime;
 
-    @Column(name = "end_time", nullable = false)
+    @Column(name = "end_time")
     private Date endTime;
 
-    @Column(name = "available_seats", nullable = false)
+    @Column(name = "available_seats")
     private int availableSeats;
 
-    @Column(name = "is_active", nullable = false)
-    private boolean isActive;
+    @Column(name = "is_active")
+    private String isActive;
 
-    @Column(name = "created_at", nullable = false)
+    @Column(name = "created_at")
     private Date createdAt;
 
     @Column(name = "updated_at")
     private Date updatedAt;
 
-    @Column(name = "created_by", nullable = false)
+    @Column(name = "created_by")
     private String createdBy;
 
     @Column(name = "updated_by")
     private String updatedBy;
+    
+    
+
+	public ShowtimeEntity() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	public int getId() {
-		return id;
+		return showTimeId;
 	}
 
 	public void setId(int id) {
-		this.id = id;
+		this.showTimeId = id;
 	}
 
 	public MovieEntity getMovie() {
@@ -105,11 +112,11 @@ public class ShowtimeEntity {
 		this.availableSeats = availableSeats;
 	}
 
-	public boolean isActive() {
+	public String isActive() {
 		return isActive;
 	}
 
-	public void setActive(boolean isActive) {
+	public void setActive(String isActive) {
 		this.isActive = isActive;
 	}
 

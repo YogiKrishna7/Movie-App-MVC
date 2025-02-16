@@ -19,73 +19,62 @@ public class MovieEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
-    private int id;
+    @Column(name = "movie_id")
+    private int movieId;
     
-    @Column(name="url", nullable = false)
-    private String MovieUrl;
+    @Column(name="movie_image_url")
+    private String MovieImageUrl;
 
-    @Column(name = "title", nullable = false)
+    @Column(name = "title")
     private String title;
 
     @Column(name = "description")
     private String description;
 
-    @Column(name = "duration", nullable = false)
+    @Column(name = "duration")
     private int duration;
 
-    @Column(name = "release_date", nullable = false)
+    @Column(name = "release_date")
     private String releaseDate;
 
     @Column(name = "genre")
     private String genre;
 
-    @Column(name = "is_active", nullable = false)
-    private boolean isActive;
+    @Column(name = "is_active")
+    private String isActive;
 
-    @Column(name = "created_at", nullable = false)
+    @Column(name = "created_at")
     private Date createdAt;
 
     @Column(name = "updated_at")
     private Date updatedAt;
 
-    @Column(name = "created_by", nullable = false)
+    @Column(name = "created_by")
     private String createdBy;
 
     @Column(name = "updated_by")
     private String updatedBy;
 
-	public MovieEntity(int id, String movieUrl, String title, String description, int duration, String releaseDate,
-			String genre, boolean isActive, Date createdAt, Date updatedAt, String createdBy, String updatedBy) {
+    
+
+	public MovieEntity() {
 		super();
-		this.id = id;
-		MovieUrl = movieUrl;
-		this.title = title;
-		this.description = description;
-		this.duration = duration;
-		this.releaseDate = releaseDate;
-		this.genre = genre;
-		this.isActive = isActive;
-		this.createdAt = createdAt;
-		this.updatedAt = updatedAt;
-		this.createdBy = createdBy;
-		this.updatedBy = updatedBy;
 	}
 
 	public int getId() {
-		return id;
+		return movieId;
 	}
 
 	public void setId(int id) {
-		this.id = id;
+		this.movieId = id;
 	}
 
 	public String getMovieUrl() {
-		return MovieUrl;
+		return MovieImageUrl;
 	}
 
 	public void setMovieUrl(String movieUrl) {
-		MovieUrl = movieUrl;
+		MovieImageUrl = movieUrl;
 	}
 
 	public String getTitle() {
@@ -128,11 +117,11 @@ public class MovieEntity {
 		this.genre = genre;
 	}
 
-	public boolean isActive() {
+	public String isActive() {
 		return isActive;
 	}
 
-	public void setActive(boolean isActive) {
+	public void setActive(String isActive) {
 		this.isActive = isActive;
 	}
 

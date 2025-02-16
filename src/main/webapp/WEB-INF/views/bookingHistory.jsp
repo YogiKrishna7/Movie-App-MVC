@@ -10,7 +10,7 @@
 
 <body>
     <header>
-        <a href="${pageContext.request.contextPath}/movieapp/dashboard" class="logo">Logo</a>
+        <a href="${pageContext.request.contextPath}/movieapp/home" class="logo">Logo</a>
     </header>
     <main>
         <section id="history">
@@ -24,7 +24,7 @@
         <p>&copy; My Movie Booker</p>
     </footer>
 </body>
-<script type="text/javascript">
+<script>
 function GotoProfile(){
 	window.location.href="/movieapp/profile"
 }
