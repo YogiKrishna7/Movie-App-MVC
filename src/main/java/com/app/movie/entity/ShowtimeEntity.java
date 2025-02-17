@@ -1,75 +1,75 @@
 package com.app.movie.entity;
 
+import java.time.LocalTime;
 import java.util.Date;
-import java.util.List;
 
-
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="showtimes")
+@Table(name = "showtimes")
 public class ShowtimeEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "showtime_id")
-    private int showTimeId;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "showtime_id")
+	private int showTimeId;
 
-    @ManyToOne
-    @JoinColumn(name = "movie_id")
-    private MovieEntity movie;
+	@ManyToOne
+	@JoinColumn(name = "movie_id")
+	private MovieEntity movie;
 
-    @ManyToOne
-    @JoinColumn(name = "theatre_id")
-    private TheatreEntity theatre;
+	@ManyToOne
+	@JoinColumn(name = "theatre_id")
+	private TheatreEntity theatre;
 
-    @Column(name = "start_time")
-    private Date startTime;
+	@Column(name = "start_time")
+	private LocalTime startTime;
 
-    @Column(name = "end_time")
-    private Date endTime;
+	@Column(name = "end_time")
+	private LocalTime endTime;
 
-    @Column(name = "available_seats")
-    private int availableSeats;
+	@Column(name = "start_date")
+	private Date startDate;
 
-    @Column(name = "is_active")
-    private String isActive;
+	@Column(name = "end_date")
+	private Date endDate;
 
-    @Column(name = "created_at")
-    private Date createdAt;
+	@Column(name = "available_seats")
+	private int availableSeats;
 
-    @Column(name = "updated_at")
-    private Date updatedAt;
+	@Column(name = "is_active")
+	private String isActive;
 
-    @Column(name = "created_by")
-    private String createdBy;
+	@Column(name = "created_at")
+	private Date createdAt;
 
-    @Column(name = "updated_by")
-    private String updatedBy;
-    
-    
+	@Column(name = "updated_at")
+	private Date updatedAt;
+
+	@Column(name = "created_by")
+	private String createdBy;
+
+	@Column(name = "updated_by")
+	private String updatedBy;
 
 	public ShowtimeEntity() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public int getId() {
+	public int getShowTimeId() {
 		return showTimeId;
 	}
 
-	public void setId(int id) {
-		this.showTimeId = id;
+	public void setShowTimeId(int showTimeId) {
+		this.showTimeId = showTimeId;
 	}
 
 	public MovieEntity getMovie() {
@@ -88,20 +88,36 @@ public class ShowtimeEntity {
 		this.theatre = theatre;
 	}
 
-	public Date getStartTime() {
+	public LocalTime getStartTime() {
 		return startTime;
 	}
 
-	public void setStartTime(Date startTime) {
+	public void setStartTime(LocalTime startTime) {
 		this.startTime = startTime;
 	}
 
-	public Date getEndTime() {
+	public LocalTime getEndTime() {
 		return endTime;
 	}
 
-	public void setEndTime(Date endTime) {
+	public void setEndTime(LocalTime endTime) {
 		this.endTime = endTime;
+	}
+
+	public Date getStartDate() {
+		return startDate;
+	}
+
+	public void setStartDate(Date startDate) {
+		this.startDate = startDate;
+	}
+
+	public Date getEndDate() {
+		return endDate;
+	}
+
+	public void setEndDate(Date endDate) {
+		this.endDate = endDate;
 	}
 
 	public int getAvailableSeats() {
@@ -112,11 +128,11 @@ public class ShowtimeEntity {
 		this.availableSeats = availableSeats;
 	}
 
-	public String isActive() {
+	public String getIsActive() {
 		return isActive;
 	}
 
-	public void setActive(String isActive) {
+	public void setIsActive(String isActive) {
 		this.isActive = isActive;
 	}
 
@@ -150,5 +166,6 @@ public class ShowtimeEntity {
 
 	public void setUpdatedBy(String updatedBy) {
 		this.updatedBy = updatedBy;
-	} 
+	}
+
 }
