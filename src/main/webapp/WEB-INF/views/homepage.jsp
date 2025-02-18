@@ -44,8 +44,12 @@
     </footer>
 </body>
 <script>
-    function GoToMovieInfo(movieId) {
+    /*function GoToMovieInfo(movieId) {
         window.location.href = '/movieapp/movie-info?movieId=' + movieId;
+    }*/
+    
+    function GoToMovieInfo(movieId) {
+        window.location.href = '/movieapp/movie-info/' + movieId;
     }
 
     function GoToProfile() {

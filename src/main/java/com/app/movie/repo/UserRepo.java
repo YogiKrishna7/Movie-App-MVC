@@ -11,6 +11,9 @@ public interface UserRepo extends JpaRepository<UserEntity, Integer>{
 
 	UserEntity findByPhoneNumberAndPassword(String phone, String password);
 	
-	@Query(nativeQuery = true, value="SELECT * FROM users WHERE phone_number = :phone and password = :password")
-	UserEntity findUser(String phone, String password);
+//	@Query(nativeQuery = true, value="SELECT * FROM users WHERE phone_number = ? and password = ?")
+//	UserEntity findUser(String phone, String password);
+	
+//	@Query(nativeQuery = true, value="SELECT * FROM users WHERE phone_number = :phone and password = :password")
+//	UserEntity findUser(String phone, String password);
 }

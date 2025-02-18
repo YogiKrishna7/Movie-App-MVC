@@ -93,4 +93,5 @@ values
 (49, 10, "M2", "N", NOW(), NOW(), "admin", "admin"),
 (50, 10, "N1", "N", NOW(), NOW(), "admin", "admin");
 
-SELECT * FROM showtimes;
+-- SELECT * FROM showtimes
+-- where end_time SUBTIME("20:00:00", "00:15:00");
