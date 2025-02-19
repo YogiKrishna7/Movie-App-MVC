@@ -55,5 +55,16 @@
     function GoToProfile() {
         window.location.href = '/movieapp/profile';
     }
+    
+    // Immediately Invoked Function Expression
+    (async function getMoviesJson(){
+    	
+    	let response = await fetch("/movieapp/movie-api");
+    	
+    	let jsonData = await response.json();
+    	
+    	console.log(jsonData);
+    	
+    })();
 </script>
 </html>

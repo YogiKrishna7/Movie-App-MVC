@@ -19,30 +19,22 @@ public class HomepageController {
 	@Autowired
     private MovieService movieService;
     
-//    @GetMapping("/home")
-//    public String home(Model model) {
-//    	    
-//    	List<MovieEntity> movieList = movieService.getMovies();
-//        
-//    	model.addAttribute("movieList", movieList);
-//    	
-//        return "homepage";
-//    }
-	
-//    @GetMapping("/home")
-//    @ResponseBody
-//    public List<MovieEntity> home() {
-//    	    
-//    	List<MovieEntity> movieList = movieService.getMovies();
-//        
-////    	model.addAttribute("movieList", movieList);
-//    	
-//        return movieList;
-//    }
-    
     @GetMapping("/home")
+    public String home(Model model) {
+    	    
+    	List<MovieEntity> movieList = movieService.getMovies();
+        
+    	model.addAttribute("movieList", movieList);
+    	
+        return "homepage";
+    }
+
+    
+    @GetMapping("/movie-api")
     @ResponseBody
     public List<MovieEntity> getMovies() {
-        return movieService.getMovies();
+    	List<MovieEntity> movieApiList = movieService.getMovies();
+    	
+        return movieApiList;
     }
 }
