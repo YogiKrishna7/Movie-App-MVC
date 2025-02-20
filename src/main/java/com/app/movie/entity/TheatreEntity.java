@@ -48,7 +48,6 @@ public class TheatreEntity {
     
 	public TheatreEntity() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public int getId() {

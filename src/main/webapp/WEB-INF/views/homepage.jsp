@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="com.app.movie.entity.MovieEntity" %>
+<%@ page import="com.app.movie.entity.TheatreEntity" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,14 +14,17 @@
     <header>
         <a href="${pageContext.request.contextPath}/movieapp/home" class="logo">Logo</a>
         <div class="nav-links">
-            <input type="text" placeholder="Search Movie">
-            <input type="text" placeholder="Search Theatre">
+            <input type="text" placeholder="Search Movie" id="search-bar">
+            <input type="text" placeholder="Search Theatre" id="search-bar2">
+            <button id="search-btn" onclick="searchStuff()">Search</button>
         </div>
         <button class="profile-btn" onclick="GoToProfile()">Profile</button>
     </header>
     <div class="content">
         <%
             ArrayList<MovieEntity> movieList = (ArrayList<MovieEntity>) request.getAttribute("movieList");
+            ArrayList<TheatreEntity> theatreList = (ArrayList<TheatreEntity>) request.getAttribute("theatreList");
+
             if (movieList != null && !movieList.isEmpty()) {
                 for (MovieEntity movie : movieList) {
         %>
@@ -32,9 +36,20 @@
         </div>
         <%
                 }
+            } else if (theatreList != null && !theatreList.isEmpty()) {
+                for (TheatreEntity theatre : theatreList) {
+        %>
+        <div class="theatre-container" onclick="GoToTheatreInfo(<%= theatre.getId() %>)">
+            <div class="box">
+                <h3><%= theatre.getName() %></h3>
+            </div>
+            <p>Location: <br><%= theatre.getLocation() %></p>
+        </div>
+        <%
+                }
             } else {
         %>
-        <p class="no-movies">Movies Not Available</p>
+        <p class="no-results">No search results available.</p>
         <%
             }
         %>
@@ -44,27 +59,34 @@
     </footer>
 </body>
 <script>
-    /*function GoToMovieInfo(movieId) {
-        window.location.href = '/movieapp/movie-info?movieId=' + movieId;
-    }*/
-    
     function GoToMovieInfo(movieId) {
         window.location.href = '/movieapp/movie-info/' + movieId;
+    }
+
+    function GoToTheatreInfo(theatreId) {
+        window.location.href = '/movieapp/theatre-info/' + theatreId;
     }
 
     function GoToProfile() {
         window.location.href = '/movieapp/profile';
     }
-    
-    // Immediately Invoked Function Expression
-    (async function getMoviesJson(){
-    	
-    	let response = await fetch("/movieapp/movie-api");
-    	
-    	let jsonData = await response.json();
-    	
-    	console.log(jsonData);
-    	
-    })();
+
+    function searchStuff() {
+        const movieTerm = document.getElementById("search-bar").value.trim();
+        const theatreTerm = document.getElementById("search-bar2").value.trim();
+        
+        if(movieTerm && theatreTerm){
+        	alert("Cant search both movie and theatre at a same time.");
+        }
+        else if (movieTerm) {
+            window.location.href = '/movieapp/search/' + movieTerm;
+        } 
+        else if (theatreTerm) {
+            window.location.href = '/movieapp/search-theatre/' + theatreTerm;
+        }
+        else {
+            alert("Please enter a movie or theatre name to search.");
+        }
+    }
 </script>
 </html>
