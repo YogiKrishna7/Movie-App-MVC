@@ -21,7 +21,7 @@
         <h2>Login</h2>
         <form action="/movieapp/auth" method="post">
             <div class="form-group">
-                <label for="phone">Phone number</label>
+                <label for="phone">Enter your phone number</label>
                 <input type="text" id="phone" name="phone" required>
             </div>
             <div class="form-group">

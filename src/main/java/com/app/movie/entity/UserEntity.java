@@ -56,6 +56,16 @@ public class UserEntity {
 		super();
 	}
 
+	public UserEntity(String name, String phone, String email, String password) {
+		this.username = name;
+		this.phoneNumber = phone;
+		this.email = email;
+		this.password = password;
+		this.role = "user";
+        this.isActive = "Y";
+        this.createdAt = new Date();
+	}
+
 	public int getId() {
 		return userId;
 	}

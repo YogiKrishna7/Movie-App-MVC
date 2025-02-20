@@ -19,7 +19,7 @@
 
     <div class="container">
         <h2>Sign Up</h2>
-        <form action="signup" method="get">
+        <form action="/movieapp/create-account" method="post">
             <div class="form-group">
                 <label for="name">Enter name:</label>
                 <input type="text" id="name" name="name" required>
@@ -27,6 +27,10 @@
             <div class="form-group">
                 <label for="phone">Enter phone number:</label>
                 <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="mail">Enter email:</label>
+                <input type="email" id="email" name="email" required>
             </div>
             <div class="form-group">
                 <label for="password">Create a password:</label>
