@@ -27,5 +27,15 @@ public class TheatreService {
         }
 		return searchedTheatrs;
     }
+    
+    public TheatreEntity getTheatreById(int TheartreId) {
+    	
+    	for(TheatreEntity t : tr.findAll()) {
+    		if(t.getId() == TheartreId) {
+    			return t;
+    		}
+    	}
+    	return null;
+    }
 	
 }

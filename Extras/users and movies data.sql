@@ -1,17 +1,17 @@
-insert into users(user_id, email, `password`, phone_number, `role`, username, is_active)
-values
-(1, "a.yogendra65@gmail.com", "yogi123", 9866709807, "user", "yogendra", "Y"),
-(2, "prasad@gmail.com", "prasad123", 1234567890, "user", "prasad", "Y"),
-(3, "eshwar@gmail.com", "eshwar123", 1234567891, "user", "eshwar", "Y"),
-(4, "arun@gmail.com", "arun123", 1234567892, "user", "arun", "Y"),
-(5, "ganesh@gmail.com", "ganesh123", 1234567893, "user", "ganesh", "Y");
+-- insert into users(user_id, email, `password`, phone_number, `role`, username, is_active)
+-- values
+-- (1, "a.yogendra65@gmail.com", "yogi123", 9866709807, "user", "yogendra", "Y"),
+-- (2, "prasad@gmail.com", "prasad123", 1234567890, "user", "prasad", "Y"),
+-- (3, "eshwar@gmail.com", "eshwar123", 1234567891, "user", "eshwar", "Y"),
+-- (4, "arun@gmail.com", "arun123", 1234567892, "user", "arun", "Y"),
+-- (5, "ganesh@gmail.com", "ganesh123", 1234567893, "user", "ganesh", "Y");
 
 insert into movies(movie_id, title, movie_image_url, description, duration, genre, release_date, is_active)
 values
 (1, "Kung Fu Panda", "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcS2uZIj7-mLfVp1TYvfTEPBMGL5fCn8Hm40LEKFPPE6BHVIPA7fDyUM9e5zXKvyWdUyqzXOEg", "A story about a panda who becomes a kung fu master.", 90, "Animation/Action", "2008-06-06", "Y"),
 (2, "Kung Fu Panda 2", "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSrEnW4Qes8q3NiwQS3grDaqN5ENSQdFTik1C2fdEeSAXTDQAzs", "The panda faces a new villain threatening his homeland.", 140, "Animation/Action", "2011-05-26", "Y"),
 (3, "Kung Fu Panda 3", "https://lumiere-a.akamaihd.net/v1/images/image_0e6ad10d.jpeg?region=0%2C0%2C1400%2C2100", "Po reunites with his long-lost father.", 120, "Animation/Action", "2015-01-29", "Y"),
-(4, "Kung Fu Panda 4", "https://assets.gadgets360cdn.com/pricee/assets/product/202311/Kung-Fu-Panda-4-Poster_1700827659.jpg", "Po embarks on a new adventure.", 90, "Animation/Action", "2024-03-08", "Y"),
+(4, "Kung Fu Panda 4", "https://assets.gadgeusersts360cdn.com/pricee/assets/product/202311/Kung-Fu-Panda-4-Poster_1700827659.jpg", "Po embarks on a new adventure.", 90, "Animation/Action", "2024-03-08", "Y"),
 (5, "Die Hard 4", "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTJOxjD49uzIVF4gBVI_eopbb0AS53-Ta-wExU2C8s8hlDN5UQs-fXihh4AYxJnwh2ShJNj", "John McClane faces cyber terrorists.", 90, "Action/Thriller", "2007-06-27", "Y"),
 (6, "Mr. Bean", "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQUuM488ffxIbhzFEUA-rimo81Gmbnfo1R1n_XH8ga09-Fy5W2rG3NcKESX0UorZrXEBVzq_Q", "Comical adventures of Mr. Bean.", 90, "Comedy", "2008-01-01", "Y"),
 (7, "Interstellar", "https://m.media-amazon.com/images/I/91vIHsL-zjL.jpg", "A journey through space and time.", 90, "Sci-Fi/Drama", "2011-11-07", "Y"),

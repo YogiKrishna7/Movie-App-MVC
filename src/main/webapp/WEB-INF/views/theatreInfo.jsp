@@ -1,3 +1,4 @@
+<%@ page import="com.app.movie.entity.TheatreEntity" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,12 +16,24 @@
         </div>
         <button class="profile-btn" onclick="GotoProfile()">Profile</button>
     </header>
-
     <main class="main-container">
+    	<%
+            TheatreEntity selectedTheatre = (TheatreEntity) request.getAttribute("selectedTheatre");
+        %>
         <div class="content-container">
             <div class="left-section">
-                <div class="box"></div>
-                <div class="info">Movie info</div>
+                <div class="box">
+                	<h2><%= selectedTheatre.getName() %></h2>
+                </div>
+                <div class="info">
+                Location: 
+                <br>
+                <%= selectedTheatre.getLocation() %>
+                <br>
+                Capacity: 
+                <br>
+                <%= selectedTheatre.getCapacity() %>
+                </div>
             </div>
             <div id="seats-selection">
                 <h4>Select Date:</h4>

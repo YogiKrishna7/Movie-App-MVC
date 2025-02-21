@@ -7,5 +7,6 @@ import com.app.movie.entity.ShowtimeEntity;
 
 @Repository
 public interface ShowtimeRepo extends JpaRepository<ShowtimeEntity, Integer>{
-
+	
+	
 }
