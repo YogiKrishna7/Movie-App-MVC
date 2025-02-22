@@ -1,4 +1,5 @@
-<%@ page import="com.app.movie.entity.TheatreEntity" %>
+<%@ page import="com.app.movie.entity.TheatreEntity, java.util.List, com.app.movie.entity.ShowtimeEntity" %>
+<%@ page import="java.text.SimpleDateFormat, java.util.Date" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,40 +17,49 @@
         </div>
         <button class="profile-btn" onclick="GotoProfile()">Profile</button>
     </header>
+
     <main class="main-container">
-    	<%
+        <%
             TheatreEntity selectedTheatre = (TheatreEntity) request.getAttribute("selectedTheatre");
+            List<ShowtimeEntity> datesAndTimes = (List<ShowtimeEntity>) request.getAttribute("datesAndTimes");
+            
+            SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd");
         %>
         <div class="content-container">
             <div class="left-section">
                 <div class="box">
-                	<h2><%= selectedTheatre.getName() %></h2>
+                    <h2><%= selectedTheatre.getName() %></h2>
                 </div>
                 <div class="info">
-                Location: 
-                <br>
-                <%= selectedTheatre.getLocation() %>
-                <br>
-                Capacity: 
-                <br>
-                <%= selectedTheatre.getCapacity() %>
+                    Location: <br>
+                    <%= selectedTheatre.getLocation() %><br>
+                    Capacity: <br>
+                    <%= selectedTheatre.getCapacity() %>
                 </div>
             </div>
+
             <div id="seats-selection">
                 <h4>Select Date:</h4>
-                <input type="date">
-                <h4>Select Show Times:</h4>
                 <div class="dropdown-container">
-                    <select>
+                    <select id="dateDropdown" onchange="populateShowtimes()">
+                        <option value="">Select Date</option>
+                        <% for (ShowtimeEntity showtime : datesAndTimes) { %>
+                            <option value="<%= dateFormatter.format(showtime.getStartDate()) %>">
+                                <%= dateFormatter.format(showtime.getStartDate()) %>
+                            </option>
+                        <% } %>
+                    </select>
+                </div>
+
+                <h4>Select Show Time:</h4>
+                <div class="dropdown-container">
+                    <select id="timeDropdown">
                         <option value="">Select Show Time</option>
-                        <option value="theatre1">Showtime 1</option>
-                        <option value="theatre2">Showtime 2</option>
-                        <option value="theatre3">Showtime 3</option>
                     </select>
                 </div>
             </div>
         </div>
-        <div class="button-container">
+        <div class="buttons-container">
             <button class="button" onclick="GotoSeatSelection()">Continue</button>
             <button class="button" onclick="GotoMovieInfo()">Cancel</button>
         </div>
@@ -58,18 +68,54 @@
     <footer>
         <p>&copy; 2024 My Movie Booker</p>
     </footer>
+
+    <script>
+        var showtimesData = {};
+        <% for (ShowtimeEntity showtime : datesAndTimes) { %>
+            var date = "<%= dateFormatter.format(showtime.getStartDate()) %>"; // Use formatted date
+            var time = "<%= showtime.getStartTime() %>"; // Keep time as it is
+            if (!showtimesData[date]) {
+                showtimesData[date] = [];
+            }
+            showtimesData[date].push(time);
+        <% } %>
+
+        function populateShowtimes() {
+            var dateDropdown = document.getElementById("dateDropdown");
+            var timeDropdown = document.getElementById("timeDropdown");
+            var selectedDate = dateDropdown.value;
+
+            timeDropdown.innerHTML = '<option value="">Select Show Time</option>';
+
+            if (selectedDate && showtimesData[selectedDate]) {
+                showtimesData[selectedDate].forEach(function(time) {
+                    var option = document.createElement("option");
+                    option.value = time;
+                    option.textContent = time;
+                    timeDropdown.appendChild(option);
+                });
+            }
+        }
+        
+        function GotoSeatSelection() {
+            var selectedDate = document.getElementById("dateDropdown").value;
+            var selectedTime = document.getElementById("timeDropdown").value;
+
+            if (!selectedDate || !selectedTime) {
+                alert("Please select both date and time before continuing!");
+                return;
+            }
+
+            window.location.href = "/movieapp/seat-selection/" + selectedDate + "/" + selectedTime;
+        }
+
+        function GotoMovieInfo(){
+            window.location.href="/movieapp/movie-info";
+        }
+
+        function GotoProfile(){
+            window.location.href="/movieapp/profile";
+        }
+    </script>
 </body>
-<script>
-function GotoSeatSelection(){
-	window.location.href="/movieapp/seat-selection";
-}
-
-function GotoMovieInfo(){
-	window.location.href="/movieapp/movie-info";
-}
-
-function GotoProfile(){
-	window.location.href="/movieapp/profile"
-}
-</script>
 </html>

@@ -1,10 +1,10 @@
--- insert into users(user_id, email, `password`, phone_number, `role`, username, is_active)
--- values
--- (1, "a.yogendra65@gmail.com", "yogi123", 9866709807, "user", "yogendra", "Y"),
--- (2, "prasad@gmail.com", "prasad123", 1234567890, "user", "prasad", "Y"),
--- (3, "eshwar@gmail.com", "eshwar123", 1234567891, "user", "eshwar", "Y"),
--- (4, "arun@gmail.com", "arun123", 1234567892, "user", "arun", "Y"),
--- (5, "ganesh@gmail.com", "ganesh123", 1234567893, "user", "ganesh", "Y");
+insert into users(user_id, email, `password`, phone_number, `role`, username, is_active)
+values
+(1, "a.yogendra65@gmail.com", "yogi123", 9866709807, "user", "yogendra", "Y"),
+(2, "prasad@gmail.com", "prasad123", 1234567890, "user", "prasad", "Y"),
+(3, "eshwar@gmail.com", "eshwar123", 1234567891, "user", "eshwar", "Y"),
+(4, "arun@gmail.com", "arun123", 1234567892, "user", "arun", "Y"),
+(5, "ganesh@gmail.com", "ganesh123", 1234567893, "user", "ganesh", "Y");
 
 insert into movies(movie_id, title, movie_image_url, description, duration, genre, release_date, is_active)
 values
