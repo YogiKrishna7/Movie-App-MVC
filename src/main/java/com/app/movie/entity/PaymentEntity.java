@@ -7,12 +7,12 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 
 @Entity
-@Table(name="payments")
+@Table(name = "payments")
 public class PaymentEntity {
 
     @Id
@@ -20,60 +20,39 @@ public class PaymentEntity {
     @Column(name = "payment_id")
     private int paymentId;
 
-    @OneToOne
-    @JoinColumn(name = "booking_id")
-    private BookingEntity booking;
-
-    @Column(name = "payment_method")
-    private String paymentMethod;
+    @Column(name = "user_id") // Associate with user, not booking
+    private int userId;
 
     @Column(name = "amount")
     private double amount;
 
     @Column(name = "status")
-    private String status;
+    private String status; // Example: "PENDING", "COMPLETED", "FAILED"
 
+    @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "created_at")
     private Date createdAt;
-
+    
+    @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "updated_at")
     private Date updatedAt;
 
-    @Column(name = "created_by")
-    private String createdBy;
+    public PaymentEntity() {}
 
-    @Column(name = "updated_by")
-    private String updatedBy;
-    
-    
-
-	public PaymentEntity() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	public int getId() {
+	public int getPaymentId() {
 		return paymentId;
 	}
 
-	public void setId(int id) {
-		this.paymentId = id;
+	public void setPaymentId(int paymentId) {
+		this.paymentId = paymentId;
 	}
 
-	public BookingEntity getBooking() {
-		return booking;
+	public int getUserId() {
+		return userId;
 	}
 
-	public void setBooking(BookingEntity booking) {
-		this.booking = booking;
-	}
-
-	public String getPaymentMethod() {
-		return paymentMethod;
-	}
-
-	public void setPaymentMethod(String paymentMethod) {
-		this.paymentMethod = paymentMethod;
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
 
 	public double getAmount() {
@@ -106,22 +85,6 @@ public class PaymentEntity {
 
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
-	}
-
-	public String getCreatedBy() {
-		return createdBy;
-	}
-
-	public void setCreatedBy(String createdBy) {
-		this.createdBy = createdBy;
-	}
-
-	public String getUpdatedBy() {
-		return updatedBy;
-	}
-
-	public void setUpdatedBy(String updatedBy) {
-		this.updatedBy = updatedBy;
 	}
 
     

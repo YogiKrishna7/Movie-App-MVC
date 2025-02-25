@@ -1,144 +1,143 @@
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
 
-        body {
-            background-color: #f9fafb;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            width: 100%;
-        }
+body {
+    background-color: #f9fafb;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+}
 
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 30px;
-            background: white;
-            border: 2px solid black;
-            width: 100%;
-        }
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: white;
+    border: 2px solid black;
+    width: 100%;
+}
 
-        .logo {
-            font-size: 20px;
-            font-weight: bold;
-            color: red;
-            border: 2px solid red;
-            padding: 10px;
-            text-decoration: none;
-        }
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: red;
+    border: 2px solid red;
+    padding: 10px;
+    text-decoration: none;
+}
 
-        .nav-links {
-            display: flex;
-            gap: 15px;
-        }
+.nav-links {
+    display: flex;
+    gap: 15px;
+}
 
-        .nav-links input {
-            padding: 10px;
-            border: 2px solid black;
-        }
+.search-box {
+    padding: 10px;
+    border: 2px solid black;
+}
 
-        .profile-btn {
-            border: 2px solid black;
-            padding: 10px 15px;
-            font-weight: bold;
-            cursor: pointer;
-        }
+.profile-btn {
+    border: 2px solid black;
+    padding: 10px 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
 
-        .main-container {
-            display: flex;
-            padding: 20px;
-            gap: 20px;
-            width: 100%;
-            flex-grow: 1;
-            flex-direction: column;
-            align-items: center;
-        }
+.main-container {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+    width: 100%;
+    flex-grow: 1;
+    flex-direction: column;
+    align-items: center;
+}
 
-        .content-container {
-            display: flex;
-            gap: 20px;
-            width: 100%;
-        }
+.content-container {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
 
-        .left-section {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
+.box {
+    width: 250px;
+    height: 300px;
+    border: 3px solid orange;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
 
-        .box {
-            width: 250px;
-            height: 300px;
-            border: 3px solid orange;
-            padding: 10px;
-        }
+.box h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
 
-        .info {
-            width: 250px;
-            border: 2px solid black;
-            padding: 10px;
-        }
+.box h4 {
+    font-size: 16px;
+    color: #555;
+}
 
-        #seats-selection {
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            border: 2px solid black;
-            padding: 20px;
-            width: 100%;
-        }
+#seats-selection {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 2px solid black;
+    padding: 20px;
+    width: 100%;
+}
 
-        .dropdown-container {
-            width: 100%;
-        }
+.dropdown-container {
+    width: 100%;
+}
 
-        select {
-            width: 100%;
-            padding: 10px;
-            border: 2px solid black;
-            font-size: 16px;
-        }
+select {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid black;
+    font-size: 16px;
+}
 
-        .button {
-            padding: 15px 25px;
-            font-weight: bold;
-            cursor: pointer;
-            border: 2px solid black;
-            background: white;
-            color: red;
-        }
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+    width: 100%;
+    padding-bottom: 70px;
+}
 
-        .button:hover {
-            background-color: red;
-            color: white;
-        }
+.button {
+    padding: 15px 25px;
+    font-weight: bold;
+    cursor: pointer;
+    border: 2px solid black;
+    background: white;
+    color: black;
+}
 
-        .buttons-container {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-            width: 100%;
-        }
+.button:hover {
+    background-color: red;
+    color: white;
+}
 
-        footer {
-            text-align: center;
-            padding: 10px;
-            margin-top: auto;
-            background: white;
-            border-top: 2px solid black;
-            width: 100%;
-        }
 
-        input[type="date"] {
-            width: 100%;
-            padding: 10px;
-            border: 2px solid black;
-            font-size: 16px;
-        }
+footer {
+    text-align: center;
+    padding: 10px;
+    margin-top: auto;
+    background: white;
+    border-top: 2px solid black;
+    width: 100%;
+}

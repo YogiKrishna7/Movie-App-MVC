@@ -33,14 +33,6 @@ public class HomepageController {
     	
         return "homepage";
     }
-
-//    @GetMapping("/movie-api")
-//    @ResponseBody
-//    public List<MovieEntity> getMovies() {
-//    	List<MovieEntity> movieApiList = movieService.getMovies();
-//    	
-//        return movieApiList;
-//    }
     
     @GetMapping("/search/{movie}")
     public String search(@PathVariable String movie,  Model model) {

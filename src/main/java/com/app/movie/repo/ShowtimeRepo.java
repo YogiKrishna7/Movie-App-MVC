@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import com.app.movie.entity.MovieEntity;
 import com.app.movie.entity.ShowtimeEntity;
+import com.app.movie.entity.TheatreEntity;
 
 @Repository
 public interface ShowtimeRepo extends JpaRepository<ShowtimeEntity, Integer>{
@@ -17,5 +18,7 @@ public interface ShowtimeRepo extends JpaRepository<ShowtimeEntity, Integer>{
 	
 	public List<ShowtimeEntity> findStartDateAndStartTimeByMovie(MovieEntity movie);
 	
-	public ShowtimeEntity findByStartDateAndStartTime(Date date, LocalTime time);
+	public ShowtimeEntity findByStartDateAndStartTimeAndTheatreId(Date date, LocalTime time, int id);
+	
+	public List<ShowtimeEntity> findByTheatreId(int t);
 }

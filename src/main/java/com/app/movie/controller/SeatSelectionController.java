@@ -26,21 +26,21 @@ public class SeatSelectionController {
 	@Autowired
 	private SeatService ss;
 	
-	@GetMapping("/movieapp/seat-selection/{selectedDate}/{selectedTime}")
-	public String viewSeats(@PathVariable String selectedDate, @PathVariable String selectedTime, Model m) throws ParseException {
+	@GetMapping("/movieapp/seat-selection/{selectedDate}/{selectedTime}/{theatreId}")
+	public String viewSeats(@PathVariable String selectedDate, @PathVariable String selectedTime, @PathVariable int theatreId, Model m) throws ParseException {
 
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		Date date = dateFormat.parse(selectedDate);
-
 		LocalTime time = LocalTime.parse(selectedTime);
 
-		ShowtimeEntity showtime = sr.findByStartDateAndStartTime(date, time);
+		ShowtimeEntity showtime = sr.findByStartDateAndStartTime(date, time, theatreId);
 
 		if (showtime != null) {
 			List<SeatEntity> seats = ss.findSeatsByShowtime(showtime);
 
 			m.addAttribute("theatre", showtime.getTheatre());
 			m.addAttribute("seats", seats);
+			
 			System.out.println("Available Seats: " + seats.size());
 		} else {
 			System.out.println("No showtime found for the given date and time!");

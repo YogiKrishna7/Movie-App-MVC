@@ -37,7 +37,7 @@
             <% 
             	for(TheatreEntity t : theatreList){
             %>
-            <button onclick="GotoTheatre(<%= t.getId() %>, <%= selectedMovie.getId() %>)"><%= t.getName() %></button>
+            <button onclick="GotoTheatre(<%= t.getId() %>, <%= selectedMovie.getId() %>)"><%= t.getName() %> - <%= t.getLocation() %></button>
 			<%
             	}
 			%>

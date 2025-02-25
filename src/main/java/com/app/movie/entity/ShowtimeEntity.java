@@ -11,6 +11,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 
 @Entity
 @Table(name = "showtimes")
@@ -35,6 +37,7 @@ public class ShowtimeEntity {
 	@Column(name = "end_time")
 	private LocalTime endTime;
 
+	@Temporal(TemporalType.DATE)
 	@Column(name = "start_date")
 	private Date startDate;
 
@@ -46,6 +49,9 @@ public class ShowtimeEntity {
 
 	@Column(name = "is_active")
 	private String isActive;
+	
+	@Column(name = "screen_number")
+	private String screenNumber;
 
 	@Column(name = "created_at")
 	private Date createdAt;
@@ -104,6 +110,7 @@ public class ShowtimeEntity {
 		this.endTime = endTime;
 	}
 
+	
 	public Date getStartDate() {
 		return startDate;
 	}
@@ -167,5 +174,14 @@ public class ShowtimeEntity {
 	public void setUpdatedBy(String updatedBy) {
 		this.updatedBy = updatedBy;
 	}
+
+	public String getScreenNumber() {
+		return screenNumber;
+	}
+
+	public void setScreenNumber(String screenNumber) {
+		this.screenNumber = screenNumber;
+	}
+	
 
 }

@@ -28,15 +28,9 @@
         <div class="left-section">
             <div class="box">
             	<h2><%= selectedTheatre.getName() %></h2>
+            	<br>
+            	<h4><%= selectedTheatre.getLocation() %></h4>
             </div>
-            <div class="info">
-				Location: 
-				<br>
-                <%= selectedTheatre.getLocation() %><br>
-                Capacity: 
-                <br>
-                <%= selectedTheatre.getCapacity() %>
-			</div>
         </div>
         <div id="seats-selection">
             <h4>Select Seats:</h4>
@@ -64,7 +58,7 @@
     </main>
 
     <div class="buttons-container">
-        <button class="button" onclick="GotoSummary()">Confirm</button>
+        <button class="button" onclick="GotoSummary(<%= selectedTheatre.getId() %>)">Confirm</button>
         <button class="button" onclick="GotoTheatreInfo()">Cancel</button>
     </div>
 
@@ -88,7 +82,7 @@
 	    }
 	}
 
-    function GotoSummary() {
+    function GotoSummary(theatreId) {
         if (selectedSeats.length === 0) {
             alert("Please select at least one seat before proceeding.");
             return;
@@ -96,7 +90,7 @@
 
         let seatsParam = selectedSeats.join(",");
         
-        window.location.href = "/movieapp/order-summary/" + seatsParam;
+        window.location.href = "/movieapp/order-summary/" + seatsParam + "/" + theatreId;
     }
 	
 	function GotoTheatreInfo(){

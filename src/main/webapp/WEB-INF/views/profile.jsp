@@ -23,7 +23,6 @@
             <h4>Email: ${currentUser.getEmail()}</h4>
 
             <button onclick="GotoBookingHistory()">Bookings</button>
-            <button onclick="GotoPaymentMethods()">Payment Methods</button>
         </section>
 
         <div id="action-buttons">
@@ -42,10 +41,6 @@
 <script>
 function GotoBookingHistory(){
     window.location.href="/movieapp/booking-history";
-}
-
-function GotoPaymentMethods(){
-    window.location.href="/movieapp/payment-methods";
 }
 
 function GotoLogin(){

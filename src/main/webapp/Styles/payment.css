@@ -1,17 +1,19 @@
+/* Reset and General Styling */
 * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
 
-        body {
-            background-color: #f9fafb;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            width: 100%;
-        }
+/* Body Styling */
+body {
+    background-color: #f9fafb;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+}
 
         header {
             display: flex;
@@ -49,92 +51,94 @@
             cursor: pointer;
         }
 
-        .main-container {
-            display: flex;
-            padding: 20px;
-            gap: 20px;
-            width: 100%;
-            flex-grow: 1;
-        }
+/* Main Content */
+main {
+    flex-grow: 1;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9fafb;
+}
 
-        .left-section {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
+.payment-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border: 2px solid black;
+    padding: 20px;
+    max-width: 450px;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 100%;
+}
 
-        .box {
-            width: 250px;
-            height: 300px;
-            border: 3px solid orange;
-            padding: 10px;
-        }
+.payment-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+}
 
-        .info {
-            width: 250px;
-            border: 2px solid black;
-            padding: 10px;
-        }
+/* Form Styling */
+.form-group {
+    margin-bottom: 1.2rem;
+}
 
-        .payment-section {
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            border: 2px solid black;
-            padding: 20px;
-            width: 100%;
-            height: 350px;
-        }
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
 
-        .payment-options {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
+.form-group input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid black;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+}
 
-        .payment-options button {
-            padding: 15px;
-            font-weight: bold;
-            cursor: pointer;
-            border: 2px solid black;
-            background: white;
-            color: black;
-        }
+.row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
 
-        .payment-options button:hover {
-            background-color: red;
-            color: white;
-        }
+.row .form-group {
+    flex: 1;
+}
 
-        .buttons-container {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 10px;
-            width: 100%;
-            padding-bottom: 70px;
-        }
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
 
-        .button {
-            padding: 15px 25px;
-            font-weight: bold;
-            cursor: pointer;
-            border: 2px solid black;
-            background: white;
-            color: black;
-        }
+.button {
+    padding: 15px 25px;
+    font-weight: bold;
+    cursor: pointer;
+    border: 2px solid black;
+    background: white;
+    color: black;
+}
 
-        .button:hover {
-            background-color: red;
-            color: white;
-        }
+.button:hover {
+    background-color: red;
+    color: white;
+}
 
-        footer {
-            text-align: center;
-            padding: 15px;
-            margin-top: auto;
-            background: white;
-            border-top: 2px solid black;
-            width: 100%;
-        }
+footer {
+    text-align: center;
+    padding: 15px;
+    margin-top: auto;
+    background: white;
+    border-top: 2px solid black;
+    width: 100%;
+}

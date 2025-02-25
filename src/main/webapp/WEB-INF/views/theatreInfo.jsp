@@ -5,15 +5,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie Booking - Seat Selection</title>
+    <title>Theatre Information</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/theatreInfo.css">
 </head>
 <body>
     <header>
         <a href="${pageContext.request.contextPath}/movieapp/home" class="logo">Logo</a>
         <div class="nav-links">
-            <input type="text" placeholder="Search Movie">
-            <input type="text" placeholder="Search Theatre">
+            <input type="text" placeholder="Search Movie" class="search-box">
+            <input type="text" placeholder="Search Theatre" class="search-box">
         </div>
         <button class="profile-btn" onclick="GotoProfile()">Profile</button>
     </header>
@@ -22,19 +22,15 @@
         <%
             TheatreEntity selectedTheatre = (TheatreEntity) request.getAttribute("selectedTheatre");
             List<ShowtimeEntity> datesAndTimes = (List<ShowtimeEntity>) request.getAttribute("datesAndTimes");
-            
+
             SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd");
         %>
         <div class="content-container">
             <div class="left-section">
                 <div class="box">
                     <h2><%= selectedTheatre.getName() %></h2>
-                </div>
-                <div class="info">
-                    Location: <br>
-                    <%= selectedTheatre.getLocation() %><br>
-                    Capacity: <br>
-                    <%= selectedTheatre.getCapacity() %>
+                    <br>
+                    <h4><%= selectedTheatre.getLocation() %></h4>          
                 </div>
             </div>
 
@@ -59,8 +55,9 @@
                 </div>
             </div>
         </div>
+
         <div class="buttons-container">
-            <button class="button" onclick="GotoSeatSelection()">Continue</button>
+            <button class="button" onclick="GotoSeatSelection(<%= selectedTheatre.getId() %>)">Continue</button>
             <button class="button" onclick="GotoMovieInfo()">Cancel</button>
         </div>
     </main>
@@ -72,8 +69,8 @@
     <script>
         var showtimesData = {};
         <% for (ShowtimeEntity showtime : datesAndTimes) { %>
-            var date = "<%= dateFormatter.format(showtime.getStartDate()) %>"; // Use formatted date
-            var time = "<%= showtime.getStartTime() %>"; // Keep time as it is
+            var date = "<%= dateFormatter.format(showtime.getStartDate()) %>";
+            var time = "<%= showtime.getStartTime() %>";
             if (!showtimesData[date]) {
                 showtimesData[date] = [];
             }
@@ -96,8 +93,8 @@
                 });
             }
         }
-        
-        function GotoSeatSelection() {
+
+        function GotoSeatSelection(theatreId) {
             var selectedDate = document.getElementById("dateDropdown").value;
             var selectedTime = document.getElementById("timeDropdown").value;
 
@@ -106,7 +103,7 @@
                 return;
             }
 
-            window.location.href = "/movieapp/seat-selection/" + selectedDate + "/" + selectedTime;
+            window.location.href = "/movieapp/seat-selection/" + selectedDate + "/" + selectedTime + "/" + theatreId;
         }
 
         function GotoMovieInfo(){

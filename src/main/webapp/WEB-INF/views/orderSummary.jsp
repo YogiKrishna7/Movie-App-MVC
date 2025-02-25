@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,38 +17,48 @@
         </div>
         <button class="profile-btn" onclick="GotoProfile()">Profile</button>
     </header>
-
     <main class="main-container">
-        <div class="left-section">
-            <div class="box"></div>
-            <div class="info">Movie info</div>
-        </div>
         <div class="payment-section">
             <h4>Order Summary:</h4>
-            <div class="payment-details">Order details go here...</div>
+            <div class="payment-details">
+                <p><strong>Title:</strong> ${movie}</p>
+                <br>
+                <p><strong>Date & Time:</strong> ${showdate} ${showtime}</p>
+                <br>
+                <p><strong>Theatre:</strong> ${theatre}</p>
+                <br>
+                <p><strong>Screen Number:</strong> ${screen}</p>
+                <br>
+                <p><strong>Selected Seats:</strong>
+                    <c:forEach var="seat" items="${selectedSeats}" varStatus="loop">
+                        ${seat}${!loop.last ? ', ' : ''}
+                    </c:forEach>
+                </p>
+                <br>
+                <p><strong>Total Price:</strong> ₹${totalPrice}</p>
+            </div>
         </div>
     </main>
-
     <div class="buttons-container">
-        <button class="button" onclick="GotoPayments()">Confirm</button>
+        <button class="button" 
+    onclick="GotoPayments('${totalPrice}')">Confirm</button>
+    
         <button class="button" onclick="GotoSeatSelection()">Cancel</button>
     </div>
-
     <footer>
         <p>&copy; 2024 My Movie Booker</p>
     </footer>
 </body>
 <script>
-function GotoPayments(){
-	window.location.href="/movieapp/payments";
-}
+function GotoPayments(totalPrice) {
 
+    window.location.href = "/movieapp/payments/" + totalPrice;
+}
 function GotoSeatSelection(){
-	window.location.href="/movieapp/seat-selection";
+    window.location.href = "/movieapp/seat-selection";
 }
-
 function GotoProfile(){
-	window.location.href="/movieapp/profile"
+    window.location.href = "/movieapp/profile";
 }
 </script>
 </html>

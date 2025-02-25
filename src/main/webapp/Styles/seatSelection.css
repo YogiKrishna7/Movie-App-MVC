@@ -57,24 +57,37 @@
             flex-grow: 1;
         }
 
+
+        
         .left-section {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .box {
-            width: 250px;
-            height: 300px;
-            border: 3px solid orange;
-            padding: 10px;
-        }
-
-        .info {
-            width: 250px;
-            border: 2px solid black;
-            padding: 10px;
-        }
+		    display: flex;
+		    flex-direction: column;
+		    gap: 20px;
+		    width: 250px;
+		}
+		
+		.box {
+		    width: 250px;
+		    height: 350px;
+		    border: 3px solid orange;
+		    padding: 10px;
+		    display: flex;
+		    flex-direction: column;
+		    justify-content: center;
+		    align-items: center;
+		    text-align: center;
+		}
+		
+		.box h2 {
+		    font-size: 20px;
+		    margin-bottom: 10px;
+		}
+		
+		.box h4 {
+		    font-size: 16px;
+		    color: #555;
+		}
+        
 
         #seats-selection {
             flex-grow: 1;
@@ -125,6 +138,11 @@
             border: 2px solid black;
             background: white;
         }
+        
+        .button:hover {
+            background-color: red;
+            color: white;
+        }
 
         footer {
             text-align: center;
@@ -137,8 +155,4 @@
         .seat:hover {
             background-color: red;
             cursor: pointer;
-        }
-        .button:hover {
-            background-color: red;
-            color: white;
         }

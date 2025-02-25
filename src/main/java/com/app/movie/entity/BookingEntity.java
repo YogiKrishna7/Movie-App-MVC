@@ -16,7 +16,7 @@ import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="bookings")
+@Table(name = "bookings")
 public class BookingEntity {
 
     @Id
@@ -32,37 +32,24 @@ public class BookingEntity {
     @JoinColumn(name = "showtime_id")
     private ShowtimeEntity showtime;
 
+    @OneToOne
+    @JoinColumn(name = "payment_id")
+    private PaymentEntity payment;
+
     @Column(name = "booking_date")
     private Date bookingDate;
 
     @Column(name = "total_price")
     private double totalPrice;
 
-    @Column(name = "created_at")
-    private Date createdAt;
+    public BookingEntity() {}
 
-    @Column(name = "updated_at")
-    private Date updatedAt;
-
-    @Column(name = "created_by")
-    private String createdBy;
-
-    @Column(name = "updated_by")
-    private String updatedBy;
-    
-    
-
-	public BookingEntity() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	public int getId() {
+	public int getBookingId() {
 		return bookingId;
 	}
 
-	public void setId(int id) {
-		this.bookingId = id;
+	public void setBookingId(int bookingId) {
+		this.bookingId = bookingId;
 	}
 
 	public UserEntity getUser() {
@@ -81,6 +68,14 @@ public class BookingEntity {
 		this.showtime = showtime;
 	}
 
+	public PaymentEntity getPayment() {
+		return payment;
+	}
+
+	public void setPayment(PaymentEntity payment) {
+		this.payment = payment;
+	}
+
 	public Date getBookingDate() {
 		return bookingDate;
 	}
@@ -97,35 +92,5 @@ public class BookingEntity {
 		this.totalPrice = totalPrice;
 	}
 
-	public Date getCreatedAt() {
-		return createdAt;
-	}
-
-	public void setCreatedAt(Date createdAt) {
-		this.createdAt = createdAt;
-	}
-
-	public Date getUpdatedAt() {
-		return updatedAt;
-	}
-
-	public void setUpdatedAt(Date updatedAt) {
-		this.updatedAt = updatedAt;
-	}
-
-	public String getCreatedBy() {
-		return createdBy;
-	}
-
-	public void setCreatedBy(String createdBy) {
-		this.createdBy = createdBy;
-	}
-
-	public String getUpdatedBy() {
-		return updatedBy;
-	}
-
-	public void setUpdatedBy(String updatedBy) {
-		this.updatedBy = updatedBy;
-	}    
+    
 }

@@ -11,6 +11,7 @@ import com.app.movie.entity.UserEntity;
 import com.app.movie.service.AuthService;
 
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping("/movieapp")
@@ -25,12 +26,12 @@ public class LoginController {
 	}
 
 	@PostMapping("/auth")
-	public void login(@RequestParam("phone") String phone, @RequestParam("password") String password,
-			HttpServletResponse response) throws Exception {
+	public void login(@RequestParam("phone") String phone, @RequestParam("password") String password, HttpServletResponse response, HttpSession session) throws Exception {
 
 		UserEntity loggedIn = authService.authenticate(phone, password);
 
 		if (loggedIn != null) {
+			session.setAttribute("user", loggedIn);
 			response.sendRedirect("/movieapp/home");
 		} else {
 			response.sendRedirect("/movieapp/login");

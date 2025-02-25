@@ -23,16 +23,7 @@ public class MovieInfoController {
 	
 	@Autowired
 	private ShowtimeService ss;
-	
-//	@GetMapping("/movie-info/{movieId}")
-//	public String showMovieInfo(@RequestParam("movieId") int movieId, Model model) {
-//		
-//		MovieEntity movieInfo = ms.getMovieById(movieId);
-//		
-//		model.addAttribute("selectedMovie", movieInfo);
-//		
-//		return "movieInfo";
-//	}
+
 	
 	@GetMapping("/movie-info/{movieId}")
 	public String showMovieInfo(@PathVariable int movieId, Model model) {

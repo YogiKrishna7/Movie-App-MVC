@@ -34,8 +34,12 @@ public class ShowtimeService {
 		return sr.findStartDateAndStartTimeByMovie(m);
 	}
 	
-	public ShowtimeEntity findByStartDateAndStartTime(Date date, LocalTime time) {
-		return sr.findByStartDateAndStartTime(date, time);
+	public ShowtimeEntity findByStartDateAndStartTime(Date date, LocalTime time, int id) {
+		return sr.findByStartDateAndStartTimeAndTheatreId(date, time, id);
+	}
+	
+	public List<ShowtimeEntity> findByTheatreId(int t) {
+		return sr.findByTheatreId(t);
 	}
 }
 
