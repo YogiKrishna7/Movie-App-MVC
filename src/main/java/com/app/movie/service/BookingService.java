@@ -1,5 +1,7 @@
 package com.app.movie.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,5 +29,12 @@ public class BookingService {
         BookingEntity doneBooking = br.save(booking);
         
         return doneBooking;
+    }
+    
+    public List<BookingEntity> getBookingHistoryByUserId(int userId){
+    	
+    	List<BookingEntity> bookingHistory = br.findByUserId(userId);
+    	
+		return bookingHistory;    	
     }
 }

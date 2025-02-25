@@ -4,6 +4,7 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -41,5 +42,9 @@ public class ShowtimeService {
 	public List<ShowtimeEntity> findByTheatreId(int t) {
 		return sr.findByTheatreId(t);
 	}
+	
+    public Optional<ShowtimeEntity> findById(int showtimeId) {
+        return sr.findById(showtimeId);
+    }
 }
 

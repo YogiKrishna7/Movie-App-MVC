@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie Booking - Seat Selection</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/seatSelection.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/movieSeatSelection.css">
 </head>
 
 <body>
@@ -26,11 +26,15 @@
         %>
     
         <div class="left-section">
-            <div class="box">
-            	<h2><%= selectedTheatre.getName() %></h2>
-            	<br>
-            	<h4><%= selectedTheatre.getLocation() %></h4>
-            </div>
+                <div class="box">
+                    <img class="movie-image" src="${movieInfo.getMovieUrl()}" alt="${movieInfo.getTitle()}">
+                    <h3><strong>Theatre:</strong> ${theatre.getName()}</h3>       
+                    <h3><strong>Movie:</strong> ${movieInfo.getTitle()}</h3>  
+                    <h3><strong>Release Date:</strong> ${movieInfo.getReleaseDate()}</h3>         
+                    <h3><strong>Duration: </strong>${movieInfo.getDuration()}</h3>      
+                    <h3><strong>Genre:</strong> ${movieInfo.getGenre()}</h3>      
+                    <h3><strong>About:</strong> ${movieInfo.getDescription()}</h3> 
+                </div>
         </div>
         <div id="seats-selection">
             <h4>Select Seats:</h4>

@@ -63,7 +63,7 @@
         }
 
         function GotoOrderSummary() {
-            window.location.href = '/movieapp/order-summary';
+        	window.history.back();
         }
 
         function GotoProfile() {

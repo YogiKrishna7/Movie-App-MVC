@@ -30,6 +30,7 @@
             <p>Release Date: <%= selectedMovie.getReleaseDate() %></p>
             <p>Duration: <%= selectedMovie.getDuration() %> minutes</p>
             <p>Genre: <%= selectedMovie.getGenre() %></p>
+            <p>Description: <%= selectedMovie.getDescription() %></p>
         </div>
 
         <div class="theatre-selection">

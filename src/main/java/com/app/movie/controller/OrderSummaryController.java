@@ -1,5 +1,6 @@
 package com.app.movie.controller;
 
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
@@ -10,8 +11,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import com.app.movie.entity.ShowtimeEntity;
+import com.app.movie.entity.UserEntity;
+import com.app.movie.repo.SeatRepo;
 import com.app.movie.service.ShowtimeService;
 
+import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
@@ -19,15 +23,34 @@ public class OrderSummaryController {
 
     @Autowired
     private ShowtimeService ss;
+    
+    @Autowired
+    private SeatRepo sr;
 
-    @GetMapping("/movieapp/order-summary/{selectedSeats}/{theatreId}")
-    public String viewOrderSummary(@PathVariable("selectedSeats") String selectedSeats, @PathVariable("theatreId") int theatreId, Model model, HttpSession s) {
+    @GetMapping("/movieapp/order-summary/{selectedSeats}/{theatreId}/{showtimeId}")
+    public String viewOrderSummary(@PathVariable("selectedSeats") String selectedSeats, @PathVariable("theatreId") int theatreId, @PathVariable("showtimeId") int showtimeId, Model model, HttpSession s, HttpServletResponse response) {
         
+        UserEntity user = (UserEntity) s.getAttribute("user");
+
+        if (user == null) {
+        	try {
+				response.sendRedirect("/movieapp/login");
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+        }
+    	
     	List<String> seatList = Arrays.asList(selectedSeats.split(","));
+    	
+        // Update the database to mark seats as booked
+        for (String seatNumber : seatList) {
+            sr.markSeatAsBooked(seatNumber, theatreId);
+        }
 
         List<ShowtimeEntity> showtime = ss.findByTheatreId(theatreId);
 
-        ShowtimeEntity show = showtime.get(0);
+        ShowtimeEntity show = ss.findById(showtimeId).orElse(null);
         
         s.setAttribute("showtimeId", show);
         

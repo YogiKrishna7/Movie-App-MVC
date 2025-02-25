@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Theatre Information</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/theatreInfo.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/Styles/movieDateShowtimeSelection.css">
 </head>
 <body>
     <header>
@@ -26,11 +26,16 @@
             SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd");
         %>
         <div class="content-container">
+            
             <div class="left-section">
                 <div class="box">
-                    <h2><%= selectedTheatre.getName() %></h2>
-                    <br>
-                    <h4><%= selectedTheatre.getLocation() %></h4>          
+                    <img class="movie-image" src="${movieInfo.getMovieUrl()}" alt="${movieInfo.getTitle()}">
+                    <h3><strong>Theatre:</strong> ${selectedTheatre.getName()}</h3>       
+                    <h3><strong>Movie:</strong> ${movieInfo.getTitle()}</h3>  
+                    <h3><strong>Release Date:</strong> ${movieInfo.getReleaseDate()}</h3>         
+                    <h3><strong>Duration: </strong>${movieInfo.getDuration()}</h3>      
+                    <h3><strong>Genre:</strong> ${movieInfo.getGenre()}</h3>      
+                    <h3><strong>About:</strong> ${movieInfo.getDescription()}</h3> 
                 </div>
             </div>
 
@@ -103,7 +108,7 @@
                 return;
             }
 
-            window.location.href = "/movieapp/seat-selection/" + selectedDate + "/" + selectedTime + "/" + theatreId;
+            window.location.href = "/movieapp/seat-selection-movie/" + selectedDate + "/" + selectedTime + "/" + theatreId;
         }
 
         function GotoMovieInfo(){

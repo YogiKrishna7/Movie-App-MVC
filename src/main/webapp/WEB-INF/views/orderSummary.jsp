@@ -55,7 +55,7 @@ function GotoPayments(totalPrice) {
     window.location.href = "/movieapp/payments/" + totalPrice;
 }
 function GotoSeatSelection(){
-    window.location.href = "/movieapp/seat-selection";
+	window.history.back();
 }
 function GotoProfile(){
     window.location.href = "/movieapp/profile";

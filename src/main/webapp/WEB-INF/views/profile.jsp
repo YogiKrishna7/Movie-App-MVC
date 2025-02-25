@@ -18,16 +18,15 @@
     <main>
         <section id="profile-area">
             <h1>User Profile</h1>
-            <h4>Name: ${currentUser.getUsername()}</h4>
+            <h4>Name: ${currentUser.getUsername().toUpperCase()}</h4>
             <h4>Phone Number: ${currentUser.getPhoneNumber()}</h4>
             <h4>Email: ${currentUser.getEmail()}</h4>
 
-            <button onclick="GotoBookingHistory()">Bookings</button>
+            <button onclick="GotoBookingHistory(${currentUser.getId()})">Bookings</button>
         </section>
 
         <div id="action-buttons">
-            <button>Edit</button>
-            <button>Delete Account</button>
+            <button onclick="GotoEdit()">Edit</button>
             <button onclick="GotoLogin()">Logout</button>
             <button onclick="GotoHome()">Back</button>
         </div>
@@ -39,17 +38,21 @@
 </body>
 
 <script>
-function GotoBookingHistory(){
-    window.location.href="/movieapp/booking-history";
+function GotoEdit(){
+	window.location.href="/movieapp/profile/edit";
+}
+function GotoBookingHistory(userId){
+    window.location.href="/movieapp/booking-history/" + userId;
 }
 
 function GotoLogin(){
-    window.location.href="/movieapp/login";
+    window.location.href="/movieapp/logout";
 }
 
 function GotoHome(){
-	window.location.href = '/movieapp/home';
+	window.history.back();
 }
+
 </script>
 
 </html>
