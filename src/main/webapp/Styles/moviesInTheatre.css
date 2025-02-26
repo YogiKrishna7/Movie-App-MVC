@@ -81,17 +81,12 @@
             cursor: pointer;
             text-decoration: none;
             color: inherit;
-            transition: transform 0.2s;
-        }
-
-        .movie-container:hover {
-            transform: translateY(-5px);
         }
 
         .movie-box {
             background: white;
             border: 3px solid orange;
-            border-radius: 8px;
+            
             overflow: hidden;
             height: 320px;
         }

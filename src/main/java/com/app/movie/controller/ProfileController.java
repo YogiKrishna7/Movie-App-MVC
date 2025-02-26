@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.app.movie.entity.UserEntity;
@@ -16,12 +17,13 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
+@RequestMapping("/movieapp")
 public class ProfileController {
 
 	@Autowired
 	private UserService us;
 	
-	@GetMapping("/movieapp/profile")
+	@GetMapping("/profile")
 	public String viewProfile(HttpSession session, Model model, HttpServletResponse response) {
 		UserEntity user = (UserEntity) session.getAttribute("user");
 
@@ -38,33 +40,37 @@ public class ProfileController {
         return "profile";
 	}
 	
-	@GetMapping("/movieapp/profile/edit")
-    public String showEditProfile(HttpSession session, Model model) {
+	@GetMapping("/profile/edit")
+    public String showEditProfile(HttpSession session, Model model, HttpServletResponse response) {
         UserEntity user = (UserEntity) session.getAttribute("user");
         if (user == null) {
-            return "redirect:/movieapp/login";
+        	try {
+				response.sendRedirect("/movieapp/login");
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
         }
         model.addAttribute("currentUser", user);
         return "editProfile";
     }
 
-    @PostMapping("/movieapp/profile/update")
-    public String updateProfile(
-            @RequestParam String email,
-            @RequestParam String phone,
-            HttpSession session,
-            Model model) {
+    @PostMapping("/profile/update")
+    public String updateProfile(@RequestParam String email, @RequestParam String phone, HttpSession session, Model model, HttpServletResponse response) {
 
         UserEntity user = (UserEntity) session.getAttribute("user");
         if (user == null) {
-            return "redirect:/movieapp/login";
+        	try {
+				response.sendRedirect("/movieapp/login");
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
         }
 
-        // Call the service to update the user's details
         boolean isUpdated = us.updateUser(user.getId(), email, phone);
 
         if (isUpdated) {
-            // Update the session with the new user details
             user.setEmail(email);
             user.setPhoneNumber(phone);
             session.setAttribute("user", user);
@@ -74,7 +80,7 @@ public class ProfileController {
             model.addAttribute("error", "Failed to update profile.");
         }
 
-        return "editProfile"; // Render the edit profile form with feedback
+        return "editProfile";
     }
 	
 	

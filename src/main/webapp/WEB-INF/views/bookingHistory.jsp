@@ -43,15 +43,7 @@
                                         <span class="detail-label">Booked Date:</span>
                                         <span class="detail-value">${booking.bookingDate}</span>
                                     </div>
-                                    
-                                    <div class="detail-row">
-                                        <span class="detail-label">Seats:</span>
-                                        <span class="seats">
-                                            <c:forEach items="${bookedSeats}" var="seat" varStatus="loop">
-                                                ${seat.seatNumber}<c:if test="${!loop.last}">, </c:if>
-                                            </c:forEach>
-                                        </span>
-                                    </div>
+                                   
                                     <br>
                                 </div>
                             </div>

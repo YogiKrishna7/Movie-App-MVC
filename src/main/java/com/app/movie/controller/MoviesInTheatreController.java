@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.app.movie.entity.ShowtimeEntity;
 import com.app.movie.entity.UserEntity;
@@ -17,12 +18,13 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
+@RequestMapping("/movieapp")
 public class MoviesInTheatreController {
 	
 	@Autowired
 	private ShowtimeService ss;
 	
-	@GetMapping("/movieapp/view-theatre/{theatreId}")
+	@GetMapping("/view-theatre/{theatreId}")
 	public String moviesInTheatre(@PathVariable int theatreId, Model m, HttpSession session, HttpServletResponse response) {
 	    UserEntity user = (UserEntity) session.getAttribute("user");
 	    

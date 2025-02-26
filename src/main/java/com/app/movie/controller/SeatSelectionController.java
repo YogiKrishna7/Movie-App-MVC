@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.app.movie.entity.SeatEntity;
 import com.app.movie.entity.ShowtimeEntity;
@@ -23,6 +24,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
+@RequestMapping("/movieapp")
 public class SeatSelectionController {
 	
 	@Autowired
@@ -31,7 +33,7 @@ public class SeatSelectionController {
 	@Autowired
 	private SeatService ss;
 	
-	@GetMapping("/movieapp/seat-selection/{selectedDate}/{selectedTime}/{theatreId}")
+	@GetMapping("/seat-selection/{selectedDate}/{selectedTime}/{theatreId}")
 	public String viewSeats(@PathVariable String selectedDate, @PathVariable String selectedTime, @PathVariable int theatreId, Model m, HttpSession session, HttpServletResponse response) throws ParseException {
 		
         
@@ -65,7 +67,7 @@ public class SeatSelectionController {
 		return "seatSelection";
 	}
 	
-	@GetMapping("/movieapp/seat-selection-movie/{selectedDate}/{selectedTime}/{theatreId}")
+	@GetMapping("/seat-selection-movie/{selectedDate}/{selectedTime}/{theatreId}")
 	public String viewSeatsMovie(@PathVariable String selectedDate, @PathVariable String selectedTime, @PathVariable int theatreId, Model m, HttpSession session, HttpServletResponse response) throws ParseException {
 		
         

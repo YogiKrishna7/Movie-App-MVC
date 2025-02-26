@@ -10,7 +10,7 @@ import com.app.movie.entity.UserEntity;
 @Repository
 public interface UserRepo extends JpaRepository<UserEntity, Integer>{
 
-	UserEntity findByPhoneNumberAndPassword(String phone, String password);
+	public UserEntity findByPhoneNumberAndPassword(String phone, String password);
 	
 //	@Query(nativeQuery = true, value="SELECT * FROM users WHERE phone_number = ? and password = ?")
 //	UserEntity findUser(String phone, String password);
@@ -18,5 +18,5 @@ public interface UserRepo extends JpaRepository<UserEntity, Integer>{
 //	@Query(nativeQuery = true, value="SELECT * FROM users WHERE phone_number = :phone and password = :password")
 //	UserEntity findUser(String phone, String password);
 	
-	Optional<UserEntity> findById(int id);
+	public Optional<UserEntity> findById(int id);
 }
