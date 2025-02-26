@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.app.movie.entity.UserEntity;
 import com.app.movie.service.AuthService;
 
-import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
@@ -38,14 +37,14 @@ public class LoginController {
 			try {
 				response.sendRedirect("/movieapp/home");
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
+				
 				e.printStackTrace();
 			}
 		} else {
 			try {
 				response.sendRedirect("/movieapp/login?error=true");
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
+				
 				e.printStackTrace();
 			}
 		}
