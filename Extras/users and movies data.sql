@@ -29,16 +29,16 @@ values
 
 INSERT INTO showtimes(showtime_id, movie_id, theatre_id, start_time, end_time, start_date, end_date, available_seats, is_active, created_at, updated_at, created_by, updated_by, screen_number)
 VALUES
-(1, 1, 1, '10:00:00', '11:30:00', '2023-10-01', '2023-10-07', 200, "Y", NOW(), NOW(), "admin", "admin", "Screen 1"), -- Kung Fu Panda at INOX, Screen 1
-(2, 4, 1, '14:00:00', '15:30:00', '2023-10-01', '2023-10-07', 200, "Y", NOW(), NOW(), "admin", "admin", "Screen 2"), -- Kung Fu Panda 4 at INOX, Screen 2
-(3, 7, 2, '16:00:00', '18:20:00', '2023-10-01', '2023-10-07', 150, "Y", NOW(), NOW(), "admin", "admin", "Screen 1"), -- Interstellar at PVR, Screen 1
-(4, 12, 3, '19:00:00', '21:20:00', '2023-10-01', '2023-10-07', 100, "Y", NOW(), NOW(), "admin", "admin", "Screen 1"), -- Wall-E at Sri Sai, Screen 1
-(5, 5, 1, '12:00:00', '13:30:00', '2023-10-01', '2023-10-07', 200, "Y", NOW(), NOW(), "admin", "admin", "Screen 3"), -- Die Hard 4 at INOX, Screen 3
-(6, 6, 1, '16:00:00', '17:30:00', '2023-10-01', '2023-10-07', 200, "Y", NOW(), NOW(), "admin", "admin", "Screen 1"), -- Mr. Bean at INOX, Screen 1
-(7, 8, 2, '11:00:00', '12:30:00', '2023-10-01', '2023-10-07', 150, "Y", NOW(), NOW(), "admin", "admin", "Screen 2"), -- Alien at PVR, Screen 2
-(8, 9, 2, '18:00:00', '20:00:00', '2023-10-01', '2023-10-07', 150, "Y", NOW(), NOW(), "admin", "admin", "Screen 3"), -- Aliens at PVR, Screen 3
-(9, 10, 3, '14:00:00', '16:00:00', '2023-10-01', '2023-10-07', 100, "Y", NOW(), NOW(), "admin", "admin", "Screen 2"), -- Cars at Sri Sai, Screen 2
-(10, 11, 3, '21:00:00', '22:30:00', '2023-10-01', '2023-10-07', 100, "Y", NOW(), NOW(), "admin", "admin", "Screen 1"); -- Open Season at Sri Sai, Screen 1
+(1, 1, 1, '10:00:00', '11:30:00', '2023-10-01', '2023-10-07', 40, "Y", NOW(), NOW(), "admin", "admin", "Screen 1"), -- Kung Fu Panda at INOX, Screen 1
+(2, 4, 1, '14:00:00', '15:30:00', '2023-10-01', '2023-10-07', 40, "Y", NOW(), NOW(), "admin", "admin", "Screen 2"), -- Kung Fu Panda 4 at INOX, Screen 2
+(3, 7, 2, '16:00:00', '18:20:00', '2023-10-01', '2023-10-07', 40, "Y", NOW(), NOW(), "admin", "admin", "Screen 1"), -- Interstellar at PVR, Screen 1
+(4, 12, 3, '19:00:00', '21:20:00', '2023-10-01', '2023-10-07', 40, "Y", NOW(), NOW(), "admin", "admin", "Screen 1"), -- Wall-E at Sri Sai, Screen 1
+(5, 5, 1, '12:00:00', '13:30:00', '2023-10-01', '2023-10-07', 40, "Y", NOW(), NOW(), "admin", "admin", "Screen 3"), -- Die Hard 4 at INOX, Screen 3
+(6, 6, 1, '16:00:00', '17:30:00', '2023-10-01', '2023-10-07', 40, "Y", NOW(), NOW(), "admin", "admin", "Screen 1"), -- Mr. Bean at INOX, Screen 1
+(7, 8, 2, '11:00:00', '12:30:00', '2023-10-01', '2023-10-07', 40, "Y", NOW(), NOW(), "admin", "admin", "Screen 2"), -- Alien at PVR, Screen 2
+(8, 9, 2, '18:00:00', '20:00:00', '2023-10-01', '2023-10-07', 40, "Y", NOW(), NOW(), "admin", "admin", "Screen 3"), -- Aliens at PVR, Screen 3
+(9, 10, 3, '14:00:00', '16:00:00', '2023-10-01', '2023-10-07', 40, "Y", NOW(), NOW(), "admin", "admin", "Screen 2"), -- Cars at Sri Sai, Screen 2
+(10, 11, 3, '21:00:00', '22:30:00', '2023-10-01', '2023-10-07', 40, "Y", NOW(), NOW(), "admin", "admin", "Screen 1"); -- Open Season at Sri Sai, Screen 1
 
 insert into seats(seat_id, showtime_id, seat_number, is_booked, created_at, updated_at, created_by, updated_by)
 values

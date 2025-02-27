@@ -3,7 +3,6 @@ package com.app.movie.repo;
 import java.time.LocalTime;
 import java.util.Date;
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
@@ -18,9 +17,7 @@ import jakarta.transaction.Transactional;
 
 @Repository
 public interface ShowtimeRepo extends JpaRepository<ShowtimeEntity, Integer>{
-	
-//	public Optional<ShowtimeEntity> findById(int id);
-	
+		
 	public ShowtimeEntity findById(int id);
 	
 	public List<ShowtimeEntity> findByMovie(MovieEntity movie);
@@ -35,9 +32,9 @@ public interface ShowtimeRepo extends JpaRepository<ShowtimeEntity, Integer>{
 	
 	public List<ShowtimeEntity> findByEndTimeBefore(LocalTime today);
 	
-	@Modifying
-	@Transactional
-	@Query(nativeQuery = true, value = "UPDATE showtimes s SET s.is_active = 'N' WHERE s.showtime_id = :showtimeId")
-	void markShowsAsNotActive(@Param("showtimeId") int showtimeId);
+//	@Modifying
+//	@Transactional
+//	@Query(nativeQuery = true, value = "UPDATE showtimes s SET s.is_active = 'N' WHERE s.showtime_id = :showtimeId")
+//	void markShowsAsNotActive(@Param("showtimeId") int showtimeId);
 
 }

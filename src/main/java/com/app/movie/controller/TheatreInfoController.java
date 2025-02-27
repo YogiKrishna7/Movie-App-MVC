@@ -51,7 +51,6 @@ public class TheatreInfoController {
 		MovieEntity movie = ms.getMovieById(movieId);
 		if (movie == null) {
 			System.out.println("Movie not found!");
-			
 		}
 		
 		List<ShowtimeEntity> datesAndTimes = ss.findStartDateAndStartTimeByMovie(movie);
