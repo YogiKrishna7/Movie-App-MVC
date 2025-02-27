@@ -1,7 +1,5 @@
 package com.app.movie.repo;
 
-import java.util.Optional;
-
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -18,5 +16,5 @@ public interface UserRepo extends JpaRepository<UserEntity, Integer>{
 //	@Query(nativeQuery = true, value="SELECT * FROM users WHERE phone_number = :phone and password = :password")
 //	UserEntity findUser(String phone, String password);
 	
-	public Optional<UserEntity> findById(int id);
+	public UserEntity findById(int id);
 }

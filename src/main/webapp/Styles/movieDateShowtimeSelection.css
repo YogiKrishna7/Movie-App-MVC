@@ -42,6 +42,13 @@ header {
     border: 2px solid black;
 }
 
+#search-bar, #search-bar2 {
+    padding: 10px;
+    border: 2px solid black;
+    font-size: 16px;
+}
+
+
 .profile-btn {
     border: 2px solid black;
     padding: 10px 15px;
@@ -153,11 +160,11 @@ select {
     color: white;
 }
 
-footer {
-    text-align: center;
-    padding: 10px;
-    margin-top: auto;
-    background: white;
-    border-top: 2px solid black;
-    width: 100%;
-}
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: white;
+            border-top: 2px solid black;
+            width: 100%;
+            margin-top: auto;
+        }

@@ -36,6 +36,7 @@
         .nav-links {
             display: flex;
             gap: 15px;
+            align-items: center;
         }
 
         .nav-links input {
@@ -48,6 +49,7 @@
             padding: 10px 15px;
             font-weight: bold;
             cursor: pointer;
+            background: white;
         }
 
         .content {

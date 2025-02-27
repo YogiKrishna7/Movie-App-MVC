@@ -159,15 +159,14 @@ main {
     margin: 2rem 0;
 }
 
-/* Unified Footer Styles */
-footer {
-    text-align: center;
-    padding: 15px;
-    background: white;
-    border-top: 2px solid black;
-    width: 100%;
-    margin-top: auto;
-}
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: white;
+            border-top: 2px solid black;
+            width: 100%;
+            margin-top: auto;
+        }
 
 /* Responsive Design */
 @media (max-width: 768px) {

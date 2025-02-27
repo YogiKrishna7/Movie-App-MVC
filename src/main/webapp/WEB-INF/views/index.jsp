@@ -10,7 +10,7 @@
 
 <body>
     <header>
-        <div class="logo">Logo</div>
+        <div class="logo">MovieSpace</div>
         <div class="auth-buttons">
             <button onclick="GotoLogin()">Login</button>
             <button onclick="GotoSignup()">Sign Up</button>

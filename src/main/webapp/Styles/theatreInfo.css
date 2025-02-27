@@ -14,41 +14,43 @@ body {
     width: 100%;
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-    background: white;
-    border: 2px solid black;
-    width: 100%;
-}
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background: white;
+            border: 2px solid black;
+            width: 100%;
+        }
 
-.logo {
-    font-size: 20px;
-    font-weight: bold;
-    color: red;
-    border: 2px solid red;
-    padding: 10px;
-    text-decoration: none;
-}
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+            color: red;
+            border: 2px solid red;
+            padding: 10px;
+            text-decoration: none;
+        }
 
-.nav-links {
-    display: flex;
-    gap: 15px;
-}
+        .nav-links {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
 
-.search-box {
-    padding: 10px;
-    border: 2px solid black;
-}
+        .nav-links input {
+            padding: 10px;
+            border: 2px solid black;
+        }
 
-.profile-btn {
-    border: 2px solid black;
-    padding: 10px 15px;
-    font-weight: bold;
-    cursor: pointer;
-}
+        .profile-btn {
+            border: 2px solid black;
+            padding: 10px 15px;
+            font-weight: bold;
+            cursor: pointer;
+            background: white;
+        }
 
 .main-container {
     display: flex;
@@ -133,11 +135,11 @@ select {
 }
 
 
-footer {
-    text-align: center;
-    padding: 10px;
-    margin-top: auto;
-    background: white;
-    border-top: 2px solid black;
-    width: 100%;
-}
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: white;
+            border-top: 2px solid black;
+            width: 100%;
+            margin-top: auto;
+        }

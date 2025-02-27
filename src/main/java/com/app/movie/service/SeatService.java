@@ -1,6 +1,9 @@
 package com.app.movie.service;
 
-import java.time.LocalDateTime;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalTime;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,27 +21,31 @@ import jakarta.transaction.Transactional;
 public class SeatService {
 
 	@Autowired
-	private SeatRepo seatRepo;
+	private SeatRepo sr;
 	
 	@Autowired
 	private ShowtimeRepo se;
 	
-	public List<SeatEntity> findSeatsByShowtime(ShowtimeEntity showtime) {
-		return seatRepo.findByShowtime(showtime);
+//	public List<SeatEntity> findSeatsByShowtime(ShowtimeEntity showtime) {
+//		return sr.findByShowtime(showtime);
+//	}
+	
+	public List<SeatEntity> findByShowtimeAndIsBooked(ShowtimeEntity showtime,  String isBooked) {
+		return sr.findByShowtimeAndIsBooked(showtime, isBooked);
 	}
 	
     @Transactional
     @Scheduled(fixedRate = 60000)
-    public void updateSeatStatus() {
-        LocalDateTime now = LocalDateTime.now();
-
+    public void updateSeatStatus() throws ParseException {
+    	LocalTime now = LocalTime.now();
+    	
         List<ShowtimeEntity> endedShowtimes = se.findByEndTimeBefore(now);
 
         for (ShowtimeEntity showtime : endedShowtimes) {
-            seatRepo.markSeatsAsNotBooked(showtime.getShowTimeId());
+            sr.markSeatsAsNotBooked(showtime.getShowTimeId());
+      
         }
+        System.out.println("Updated Seat Status");
     }
     
-    
-	
 }

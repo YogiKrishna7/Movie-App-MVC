@@ -10,12 +10,14 @@
 </head>
 <body>
     <header>
-        <a href="${pageContext.request.contextPath}/movieapp/home" class="logo">Logo</a>
-        <div class="nav-links">
-            <input type="text" placeholder="Search Movie" class="search-box">
-            <input type="text" placeholder="Search Theatre" class="search-box">
-        </div>
-        <button class="profile-btn" onclick="GotoProfile()">Profile</button>
+        <a href="${pageContext.request.contextPath}/movieapp/home" class="logo">MovieSpace</a>
+ <div class="nav-links">
+    <input type="text" placeholder="Search Movie" id="search-bar" class="search-box">
+    <input type="text" placeholder="Search Theatre" id="search-bar2" class="search-box">
+    <button class="profile-btn" onclick="searchStuff()">Search</button>
+</div>
+
+        <button class="profile-btn" onclick="GoToProfile()">Profile</button>
     </header>
 
     <main class="main-container">
@@ -111,12 +113,29 @@
             window.location.href = "/movieapp/seat-selection-movie/" + selectedDate + "/" + selectedTime + "/" + theatreId;
         }
 
-        function GotoMovieInfo(){
-        	window.history.back();
+
+
+        function GoToProfile() {
+            window.location.href = '/movieapp/profile';
         }
 
-        function GotoProfile(){
-            window.location.href="/movieapp/profile";
+        function searchStuff() {
+            const movieTerm = document.getElementById("search-bar").value.trim();
+            const theatreTerm = document.getElementById("search-bar2").value.trim();
+
+            if (movieTerm && theatreTerm) {
+                alert("Can't search both movie and theatre at the same time.");
+            } else if (movieTerm) {
+                window.location.href = '/movieapp/search/' + movieTerm;
+            } else if (theatreTerm) {
+                window.location.href = '/movieapp/search-theatre/' + theatreTerm;
+            } else {
+                alert("Please enter a movie or theatre name to search.");
+            }
+        }
+        
+        function GotoMovieInfo(){
+        	window.history.back();
         }
     </script>
 </body>

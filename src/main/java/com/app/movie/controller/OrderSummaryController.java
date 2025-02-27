@@ -49,9 +49,10 @@ public class OrderSummaryController {
             sr.markSeatAsBooked(seatNumber, theatreId);
         }
 
-        List<ShowtimeEntity> showtime = ss.findByTheatreId(theatreId);
-
-        ShowtimeEntity show = ss.findById(showtimeId).orElse(null);
+        ShowtimeEntity show = ss.findById(showtimeId);
+        if(show == null) {
+        	System.out.println("Show not found");
+        }
         
         s.setAttribute("showtimeId", show);
         

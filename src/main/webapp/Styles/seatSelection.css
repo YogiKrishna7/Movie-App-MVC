@@ -35,6 +35,7 @@
         .nav-links {
             display: flex;
             gap: 15px;
+            align-items: center;
         }
 
         .nav-links input {
@@ -147,10 +148,10 @@
         footer {
             text-align: center;
             padding: 15px;
-            margin-top: auto;
             background: white;
             border-top: 2px solid black;
             width: 100%;
+            margin-top: auto;
         }
         .seat:hover {
             background-color: red;

@@ -10,7 +10,7 @@
 </head>
 <body>
     <header>
-        <a href="${pageContext.request.contextPath}/movieapp/home" class="logo">Logo</a>
+        <a href="${pageContext.request.contextPath}/movieapp/home" class="logo">MovieSpace</a>
         <div class="nav-links">
             <input type="text" placeholder="Search Movie" id="search-bar">
             <input type="text" placeholder="Search Theatre" id="search-bar2">

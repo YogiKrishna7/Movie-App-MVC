@@ -10,12 +10,13 @@
 
 <body>
     <header>
-        <a href="${pageContext.request.contextPath}/movieapp/home" class="logo">Logo</a>
+        <a href="${pageContext.request.contextPath}/movieapp/home" class="logo">MovieSpace</a>
         <div class="nav-links">
-            <input type="text" placeholder="Search Movie">
-            <input type="text" placeholder="Search Theatre">
+            <input type="text" placeholder="Search Movie" id="search-bar">
+            <input type="text" placeholder="Search Theatre" id="search-bar2">
+            <button class="profile-btn" onclick="searchStuff()">Search</button>
         </div>
-        <button class="profile-btn" onclick="GotoProfile()">Profile</button>
+        <button class="profile-btn" onclick="GoToProfile()">Profile</button>
     </header>
 
     <main>
@@ -32,8 +33,23 @@ function GotoHome(){
 	window.location.href = '/movieapp/home';
 }
 
-function GotoProfile(){
-	window.location.href="/movieapp/profile"
+function GoToProfile() {
+    window.location.href = '/movieapp/profile';
+}
+
+function searchStuff() {
+    const movieTerm = document.getElementById("search-bar").value.trim();
+    const theatreTerm = document.getElementById("search-bar2").value.trim();
+
+    if (movieTerm && theatreTerm) {
+        alert("Can't search both movie and theatre at the same time.");
+    } else if (movieTerm) {
+        window.location.href = '/movieapp/search/' + movieTerm;
+    } else if (theatreTerm) {
+        window.location.href = '/movieapp/search-theatre/' + theatreTerm;
+    } else {
+        alert("Please enter a movie or theatre name to search.");
+    }
 }
 </script>
 </html>

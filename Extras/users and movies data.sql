@@ -29,9 +29,9 @@ values
 
 INSERT INTO showtimes(showtime_id, movie_id, theatre_id, start_time, end_time, start_date, end_date, available_seats, is_active, created_at, updated_at, created_by, updated_by, screen_number)
 VALUES
-(1, 1, 1, '10:00:00', '11:30:00', '2023-10-01', '2023-10-07', 200, "Y", NOW(), NOW(), "admin", "admin", "Screen 1"), -- Kung Fu Panda at INOX, Screen 1
-(2, 4, 1, '14:00:00', '15:30:00', '2023-10-01', '2023-10-07', 200, "Y", NOW(), NOW(), "admin", "admin", "Screen 2"), -- Kung Fu Panda 4 at INOX, Screen 2
-(3, 7, 2, '16:00:00', '18:20:00', '2023-10-01', '2023-10-07', 150, "Y", NOW(), NOW(), "admin", "admin", "Screen 1"), -- Interstellar at PVR, Screen 1
+(1, 1, 1, '12:00:00', '13:30:00', '2025-02-25', '2025-03-03', 180, "Y", NOW(), NOW(), "admin", "admin", "IMAX"), 
+(2, 4, 1, '15:00:00', '16:45:00', '2025-02-25', '2025-03-03', 50, "N", NOW(), NOW(), "admin", "admin", "Screen 2"),
+(3, 7, 2, '17:30:00', '19:50:00', '2025-02-25', '2025-03-03', 120, "Y", NOW(), NOW(), "admin", "admin", "Screen 1"),
 (4, 12, 3, '19:00:00', '21:20:00', '2023-10-01', '2023-10-07', 100, "Y", NOW(), NOW(), "admin", "admin", "Screen 1"), -- Wall-E at Sri Sai, Screen 1
 (5, 5, 1, '12:00:00', '13:30:00', '2023-10-01', '2023-10-07', 200, "Y", NOW(), NOW(), "admin", "admin", "Screen 3"), -- Die Hard 4 at INOX, Screen 3
 (6, 6, 1, '16:00:00', '17:30:00', '2023-10-01', '2023-10-07', 200, "Y", NOW(), NOW(), "admin", "admin", "Screen 1"), -- Mr. Bean at INOX, Screen 1

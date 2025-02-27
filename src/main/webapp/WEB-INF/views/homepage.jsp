@@ -12,11 +12,11 @@
 </head>
 <body>
     <header>
-        <a href="${pageContext.request.contextPath}/movieapp/home" class="logo">Logo</a>
-        <div class="nav-links">
+        <a href="${pageContext.request.contextPath}/movieapp/home" class="logo">MovieSpace</a>
+         <div class="nav-links">
             <input type="text" placeholder="Search Movie" id="search-bar">
             <input type="text" placeholder="Search Theatre" id="search-bar2">
-            <button id="search-btn" onclick="searchStuff()">Search</button>
+            <button class="profile-btn" onclick="searchStuff()">Search</button>
         </div>
         <button class="profile-btn" onclick="GoToProfile()">Profile</button>
     </header>

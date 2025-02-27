@@ -68,9 +68,9 @@ public class ProfileController {
 			}
         }
 
-        boolean isUpdated = us.updateUser(user.getId(), email, phone);
+        UserEntity isUpdated = us.updateUser(user.getId(), email, phone);
 
-        if (isUpdated) {
+        if (isUpdated != null) {
             user.setEmail(email);
             user.setPhoneNumber(phone);
             session.setAttribute("user", user);

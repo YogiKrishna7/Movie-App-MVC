@@ -11,7 +11,7 @@
 
 <body>
     <header>
-        <a href="${pageContext.request.contextPath}/movieapp/home" class="logo">Logo</a>
+        <a href="${pageContext.request.contextPath}/movieapp/home" class="logo">MovieSpace</a>
         <div class="auth-buttons"></div>
     </header>
 

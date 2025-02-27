@@ -55,7 +55,7 @@ public class SeatSelectionController {
 		ShowtimeEntity showtime = sr.findByStartDateAndStartTime(date, time, theatreId);
 
 		if (showtime != null) {
-			List<SeatEntity> seats = ss.findSeatsByShowtime(showtime);
+			List<SeatEntity> seats = ss.findByShowtimeAndIsBooked(showtime, "N");
 
 			m.addAttribute("theatre", showtime.getTheatre());
 			m.addAttribute("showtimeId", showtime);
@@ -89,7 +89,7 @@ public class SeatSelectionController {
 		ShowtimeEntity showtime = sr.findByStartDateAndStartTime(date, time, theatreId);
 
 		if (showtime != null) {
-			List<SeatEntity> seats = ss.findSeatsByShowtime(showtime);
+			List<SeatEntity> seats = ss.findByShowtimeAndIsBooked(showtime, "N");
 
 			m.addAttribute("theatre", showtime.getTheatre());
 			m.addAttribute("movieInfo", showtime.getMovie());
