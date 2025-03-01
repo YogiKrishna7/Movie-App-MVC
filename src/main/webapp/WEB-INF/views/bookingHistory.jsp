@@ -61,7 +61,7 @@
     </main>
 
     <footer>
-        <p>&copy; My Movie Booker</p>
+        <p>&copy; 2025 MovieSpace</p>
     </footer>
 
     <script>

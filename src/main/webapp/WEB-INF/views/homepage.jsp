@@ -55,7 +55,7 @@
         %>
     </div>
     <footer>
-        <p>&copy; 2024 My Movie Booker</p>
+        <p>&copy; 2025 MovieSpace</p>
     </footer>
 </body>
     <script>

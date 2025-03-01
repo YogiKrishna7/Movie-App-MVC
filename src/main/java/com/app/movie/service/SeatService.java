@@ -34,18 +34,18 @@ public class SeatService {
 		return sr.findByShowtimeAndIsBooked(showtime, isBooked);
 	}
 	
-    @Transactional
-    @Scheduled(fixedRate = 60000)
-    public void updateSeatStatus() throws ParseException {
-    	LocalTime now = LocalTime.now();
-    	
-        List<ShowtimeEntity> endedShowtimes = se.findByEndTimeBefore(now);
-
-        for (ShowtimeEntity showtime : endedShowtimes) {
-            sr.markSeatsAsNotBooked(showtime.getShowTimeId());
-      
-        }
-        System.out.println("Updated Seat Status");
-    }
+//    @Transactional
+//    @Scheduled(fixedRate = 60000)
+//    public void updateSeatStatus() throws ParseException {
+//    	LocalTime now = LocalTime.now();
+//    	
+//        List<ShowtimeEntity> endedShowtimes = se.findByEndTimeBefore(now);
+//
+//        for (ShowtimeEntity showtime : endedShowtimes) {
+//            sr.markSeatsAsNotBooked(showtime.getShowTimeId());
+//      
+//        }
+//        System.out.println("Updated Seat Status");
+//    }
     
 }

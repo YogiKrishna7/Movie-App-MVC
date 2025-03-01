@@ -20,14 +20,14 @@ public class PaymentEntity {
     @Column(name = "payment_id")
     private int paymentId;
 
-    @Column(name = "user_id") // Associate with user, not booking
+    @Column(name = "user_id")
     private int userId;
 
     @Column(name = "amount")
     private double amount;
 
     @Column(name = "status")
-    private String status; // Example: "PENDING", "COMPLETED", "FAILED"
+    private String status;
 
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "created_at")
