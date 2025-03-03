@@ -2,7 +2,7 @@
 
 # 🎬 <span style="font-size: 2.5em;">MovieSpace</span> 🎬
 
-**Movie Space** is a **Spring Boot MVC web application** designed for booking movie tickets online. It provides users with a seamless experience to browse movies, select seats, and book tickets. Built with **Java, Spring Boot, MySQL, JSP, and CSS**, this application is a perfect example of a modern web application with a focus on user experience and functionality.
+**Movie Space** is a **Spring Boot MVC web application** designed for booking movie tickets online. It provides users with a easy and simple experience to browse movies, select seats, and book tickets. Built with **Java, Spring Boot, MySQL, JSP, and CSS**, this is my first Spring Boot Project which I made everything i learnt while learning
 
 </div>
 
@@ -15,7 +15,6 @@
 - **💺 Seat Selection**: Choose available seats for a specific showtime.
 - **📜 Booking History**: View past bookings and details.
 - **💳 Payment Processing**: Securely process payments for bookings.
-- **📱 Responsive Design**: Built with **JSP and CSS** for a smooth user experience.
 
 ---
 
@@ -112,7 +111,7 @@ View and edit user profile information.
 
 <div align="center">
 
-🎉  **Enjoy using MovieSpace!**  🎉  
-If you have any questions or feedback, feel free to open an issue or reach out.
+🎉  **MovieSpace!**  🎉  
+If you have any feedback, feel free to open an issue.
 
 </div>
