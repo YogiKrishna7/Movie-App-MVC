@@ -111,7 +111,7 @@ View and edit user profile information.
 
 <div align="center">
 
-🎉  **Enjoy using MovieSpace!**  🎉  
-If you have any questions or feedback, feel free to open an issue or reach out.
+🎉  **MovieSpace!**  🎉  
+If you have any feedback, feel free to open an issue.
 
 </div>
