@@ -15,7 +15,6 @@
 - **💺 Seat Selection**: Choose available seats for a specific showtime.
 - **📜 Booking History**: View past bookings and details.
 - **💳 Payment Processing**: Securely process payments for bookings.
-- **📱 Responsive Design**: Built with **JSP and CSS** for a smooth user experience.
 
 ---
 
