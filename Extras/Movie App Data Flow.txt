@@ -120,3 +120,192 @@ Fetches user details from the database ->
 Adds user details to the Model ->
 
 Renders the profile page.
+
+
+----------------------------------------------------
+
+
+Login Flow:
+
+User submits login form on index.jsp. ->
+
+HTTP POST to /auth/login. ->
+
+LoginController handles the request. ->
+
+Fetches user data from the database. ->
+
+Validates username and password. ->
+
+If valid, redirects to /dashboard. ->
+
+Else, returns to index.jsp.
+
+
+Dashboard Flow:
+
+User goes to the dashboard. ->
+
+HTTP GET to /dashboard.->
+
+DashboardController handles the request.->
+
+Fetches movies data from the database.->
+
+Fetches active movies.->
+
+Adds movies to the Model.->
+
+Renders the dashboard page.
+
+
+Movie Selection Flow:
+
+User selects a movie.->
+
+HTTP GET to /movies with movieId.->
+
+MovieInfoController handles the request.->
+
+Fetches movie details from the database.->
+
+Adds movie details to the Model.->
+
+Renders the movie info page.
+
+
+Seat Selection Flow:
+
+User selects seats.->
+
+HTTP POST to /seats/selectSeats.->
+
+SeatSelectionController handles the request.->
+
+Fetches seat data from the database.->
+
+Updates seat status in the database.->
+
+Redirects to the order summary page.
+
+
+Order Summary Flow:
+
+User views the order summary.->
+
+HTTP GET to /order's method.->
+
+OrderSummaryController handles the request.->
+
+Fetches booking and seat details from the database.->
+
+Adds order details to the Model.->
+
+Renders the order summary page.
+
+
+Payment Flow:
+
+User proceeds to payment by clicking "Continue".->
+
+HTTP GET to /payment's method.->
+
+PaymentController handles the request.->
+
+Fetches booking details from the database.->
+
+Adds booking details to the Model.->
+
+Renders the payment page.->
+
+User submits the payment form.->
+
+HTTP POST to /payment/process.->
+
+PaymentController processes the payment.->
+
+Updates payment status in the database.->
+
+Redirects to the thank-you page.
+
+
+Profile Flow:
+
+User views their profile.->
+
+HTTP GET to /profile's method.->
+
+ProfileController handles the request.->
+
+Fetches user details from the database.->
+
+Adds user details to the Model.->
+
+Renders the profile page.
+
+
+Thank You Flow:
+
+User sees the thank-you page after successful payment.->
+
+No data fetching or processing.->
+
+Renders the thank-you page.->
+
+
+Booking History Flow:
+
+User views their booking history.->
+
+HTTP GET to /booking-history's method.->
+
+BookingHistoryController handles the request.->
+
+Fetches booking details from the database.->
+
+Adds booking details to the Model.->
+
+Renders the booking history page.
+
+
+Signup Flow:
+
+User submits the signup form on signup.jsp.->
+
+HTTP POST to /create-account.->
+
+SignupController handles the request.->
+
+Creates a new UserEntity and saves it to the database.->
+
+If successful, redirects to the login page.->
+
+Else, returns to the signup page.
+
+
+Logout Flow:
+
+User clicks logout.->
+
+HTTP GET to /logout.->
+
+LoginController handles the request.->
+
+Invalidates the session.->
+
+Redirects to the login page.
+
+
+Search Flow:
+
+User searches for movies or theatres.->
+
+HTTP GET to /search/{movie} or /search-theatre/{theatre}.->
+
+HomepageController handles the request.->
+
+Fetches search results from the database.->
+
+Adds results to the Model.->
+
+Renders the homepage with search results.
