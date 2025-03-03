@@ -19,7 +19,7 @@ Else, return to index.jsp
 Dashboard Flow:
 
 
-User goes to dashboard
+User goes to dashboard ->
 
 HTTP GET to /dashboard ->
 
