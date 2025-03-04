@@ -7,6 +7,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -19,9 +21,10 @@ public class PaymentEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "payment_id")
     private int paymentId;
-
-    @Column(name = "user_id")
-    private int userId;
+    
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private UserEntity userId;
 
     @Column(name = "amount")
     private double amount;
@@ -47,11 +50,12 @@ public class PaymentEntity {
 		this.paymentId = paymentId;
 	}
 
-	public int getUserId() {
+
+	public UserEntity getUserId() {
 		return userId;
 	}
 
-	public void setUserId(int userId) {
+	public void setUserId(UserEntity userId) {
 		this.userId = userId;
 	}
 

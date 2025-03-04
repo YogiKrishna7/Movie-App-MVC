@@ -62,7 +62,7 @@ public class PaymentController {
 		
 		ShowtimeEntity showtime = (ShowtimeEntity) session.getAttribute("showtimeId");
 		
-		PaymentEntity donePayment = ps.processPayment(user.getId(), amount);
+		PaymentEntity donePayment = ps.processPayment(user, amount);
 		
 		BookingEntity doneBooking = bs.createBooking(user, showtime, donePayment);
 		
